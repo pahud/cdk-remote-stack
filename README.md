@@ -1,5 +1,10 @@
+[![awscdk-jsii-template](https://img.shields.io/badge/built%20with-awscdk--jsii--template-blue)](https://github.com/pahud/awscdk-jsii-template)
+[![NPM version](https://badge.fury.io/js/cdk-remote-stack.svg)](https://badge.fury.io/js/cdk-remote-stack)
+[![PyPI version](https://badge.fury.io/py/cdk-remote-stack.svg)](https://badge.fury.io/py/cdk-remote-stack)
+![Release](https://github.com/pahud/cdk-remote-stack/workflows/Release/badge.svg)
+
 # cdk-remote-stack
-AWS CDK construct library for getting remote stack outputs
+Get outputs from cross-regional AWS CDK stacks
 
 # Why
 
