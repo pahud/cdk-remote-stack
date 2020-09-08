@@ -17,7 +17,7 @@ AWS CDK cross-regional cross-stack reference is not easy with the native AWS CDK
 
 Let's say we have two cross-region CDK stacks in the same cdk app:
 
-1. **stackJP** - cdk stack in `Japan` to create a SNS topic
+1. **stackJP** - cdk stack in `JP` to create a SNS topic
 2. **stackUS** - cdk stack in `US` to get the Outputs from `stackJP` and print out the SNS `TopicName` from `stackJP` Outputs.
 
 
@@ -25,7 +25,6 @@ Let's say we have two cross-region CDK stacks in the same cdk app:
 import { StackOutputs } from './';
 import * as cdk from '@aws-cdk/core';
 import * as sns from '@aws-cdk/aws-sns';
-
 
 const app = new cdk.App();
 
