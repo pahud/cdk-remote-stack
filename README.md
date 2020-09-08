@@ -22,7 +22,7 @@ Let's say we have two cross-region CDK stacks in the same cdk app:
 
 
 ```ts
-import { StackOutputs } from './';
+import { StackOutputs } from 'cdk-remote-stack';
 import * as cdk from '@aws-cdk/core';
 import * as sns from '@aws-cdk/aws-sns';
 
