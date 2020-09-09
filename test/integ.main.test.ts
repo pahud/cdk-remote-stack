@@ -2,10 +2,10 @@ import { StackOutputs } from '../src';
 import * as cdk from '@aws-cdk/core';
 import * as sns from '@aws-cdk/aws-sns';
 import '@aws-cdk/assert/jest';
+import { SynthUtils } from '@aws-cdk/assert';
 
-test('create the ServerlessAPI', () => {
+test('snapshot validation', () => {
   const app = new cdk.App();
-
   const envJP = {
     region: 'ap-northeast-1',
     account: process.env.CDK_DEFAULT_ACCOUNT,
@@ -33,15 +33,5 @@ test('create the ServerlessAPI', () => {
 
   // the value should be exactly the same with the output value of `TopicName`
   new cdk.CfnOutput(stackUS, 'RemoteTopicName', { value: remoteOutputValue })
-
-  expect(stackUS).toHaveResource('AWS::CloudFormation::CustomResource', {
-    ServiceToken: {
-      'Fn::GetAtt': [
-        'OutputsMyProviderframeworkonEvent64931F85',
-        'Arn',
-      ],
-    },
-    stackName: 'demo-stack-jp',
-    regionName: 'ap-northeast-1',
-  });
-});
+  expect(SynthUtils.toCloudFormation(stackUS)).toMatchSnapshot();
+})
