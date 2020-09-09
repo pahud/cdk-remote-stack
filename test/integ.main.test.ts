@@ -34,4 +34,5 @@ test('snapshot validation', () => {
   // the value should be exactly the same with the output value of `TopicName`
   new cdk.CfnOutput(stackUS, 'RemoteTopicName', { value: remoteOutputValue })
   expect(SynthUtils.toCloudFormation(stackUS)).toMatchSnapshot();
+  expect(SynthUtils.toCloudFormation(stackJP)).toMatchSnapshot();
 })
