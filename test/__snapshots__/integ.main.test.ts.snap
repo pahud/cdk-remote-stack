@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`snapshot validation 1`] = `
+exports[`integ snapshot validation 1`] = `
 Object {
   "Outputs": Object {
     "TopicName": Object {
@@ -20,7 +20,7 @@ Object {
 }
 `;
 
-exports[`snapshot validation 2`] = `
+exports[`integ snapshot validation 2`] = `
 Object {
   "Outputs": Object {
     "RemoteTopicName": Object {
