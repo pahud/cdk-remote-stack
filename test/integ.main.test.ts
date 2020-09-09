@@ -1,38 +1,10 @@
-import { StackOutputs } from '../src';
-import * as cdk from '@aws-cdk/core';
-import * as sns from '@aws-cdk/aws-sns';
 import '@aws-cdk/assert/jest';
+import { IntegTesting } from '../src/integ.default';
 import { SynthUtils } from '@aws-cdk/assert';
 
-test('snapshot validation', () => {
-  const app = new cdk.App();
-  const envJP = {
-    region: 'ap-northeast-1',
-    account: process.env.CDK_DEFAULT_ACCOUNT,
-  };
-
-  const envUS = {
-    region: 'us-west-2',
-    account: process.env.CDK_DEFAULT_ACCOUNT,
-  };
-
-  // first stack in JP
-  const stackJP = new cdk.Stack(app, 'demo-stack-jp', { env: envJP })
-
-  const topic = new sns.Topic(stackJP, 'Topic');
-
-  new cdk.CfnOutput(stackJP, 'TopicName', { value: topic.topicName })
-
-  // second stack in US
-  const stackUS = new cdk.Stack(app, 'demo-stack-us', { env: envUS })
-
-  // get the stackJP stack outputs from stackUS
-  const outputs = new StackOutputs(stackUS, 'Outputs', { stack: stackJP })
-
-  const remoteOutputValue = outputs.getAttString('TopicName')
-
-  // the value should be exactly the same with the output value of `TopicName`
-  new cdk.CfnOutput(stackUS, 'RemoteTopicName', { value: remoteOutputValue })
-  expect(SynthUtils.toCloudFormation(stackUS)).toMatchSnapshot();
-  expect(SynthUtils.toCloudFormation(stackJP)).toMatchSnapshot();
+test('integ snapshot validation', () => {
+  const integ = new IntegTesting();
+  integ.stack.forEach(stack => {
+    expect(SynthUtils.toCloudFormation(stack)).toMatchSnapshot();
+  });
 })

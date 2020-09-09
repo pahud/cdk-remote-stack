@@ -2,33 +2,45 @@ import { StackOutputs } from './';
 import * as cdk from '@aws-cdk/core';
 import * as sns from '@aws-cdk/aws-sns';
 
+export class IntegTesting {
+  readonly stack: cdk.Stack[];
 
-const app = new cdk.App();
+  constructor(){
 
-const envJP = {
-  region: 'ap-northeast-1',
-  account: process.env.CDK_DEFAULT_ACCOUNT,
-};
+    const app = new cdk.App();
 
-const envUS = {
-  region: 'us-west-2',
-  account: process.env.CDK_DEFAULT_ACCOUNT,
-};
+    const envJP = {
+      region: 'ap-northeast-1',
+      account: process.env.CDK_DEFAULT_ACCOUNT,
+    };
 
-// first stack in JP
-const stackJP = new cdk.Stack(app, 'demo-stack-jp', { env: envJP })
+    const envUS = {
+      region: 'us-west-2',
+      account: process.env.CDK_DEFAULT_ACCOUNT,
+    };
 
-const topic = new sns.Topic(stackJP, 'Topic');
+    // first stack in JP
+    const stackJP = new cdk.Stack(app, 'demo-stack-jp', { env: envJP })
 
-new cdk.CfnOutput(stackJP, 'TopicName', { value: topic.topicName })
+    const topic = new sns.Topic(stackJP, 'Topic');
 
-// second stack in US
-const stackUS = new cdk.Stack(app, 'demo-stack-us', { env: envUS })
+    new cdk.CfnOutput(stackJP, 'TopicName', { value: topic.topicName })
 
-// get the stackJP stack outputs from stackUS
-const outputs = new StackOutputs(stackUS, 'Outputs', { stack: stackJP })
+    // second stack in US
+    const stackUS = new cdk.Stack(app, 'demo-stack-us', { env: envUS })
 
-const remoteOutputValue = outputs.getAttString('TopicName')
+    // get the stackJP stack outputs from stackUS
+    const outputs = new StackOutputs(stackUS, 'Outputs', { stack: stackJP })
 
-// the value should be exactly the same with the output value of `TopicName`
-new cdk.CfnOutput(stackUS, 'RemoteTopicName', { value: remoteOutputValue })
+    const remoteOutputValue = outputs.getAttString('TopicName')
+
+    // the value should be exactly the same with the output value of `TopicName`
+    new cdk.CfnOutput(stackUS, 'RemoteTopicName', { value: remoteOutputValue })
+
+    this.stack = [ stackJP, stackUS ]
+  }
+}
+
+
+// run the integ testing
+new IntegTesting();

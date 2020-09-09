@@ -3,6 +3,26 @@
 exports[`snapshot validation 1`] = `
 Object {
   "Outputs": Object {
+    "TopicName": Object {
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "TopicBFC7AF6E",
+          "TopicName",
+        ],
+      },
+    },
+  },
+  "Resources": Object {
+    "TopicBFC7AF6E": Object {
+      "Type": "AWS::SNS::Topic",
+    },
+  },
+}
+`;
+
+exports[`snapshot validation 2`] = `
+Object {
+  "Outputs": Object {
     "RemoteTopicName": Object {
       "Value": Object {
         "Fn::GetAtt": Array [
@@ -429,26 +449,6 @@ Object {
       },
       "Type": "AWS::CloudFormation::CustomResource",
       "UpdateReplacePolicy": "Delete",
-    },
-  },
-}
-`;
-
-exports[`snapshot validation 2`] = `
-Object {
-  "Outputs": Object {
-    "TopicName": Object {
-      "Value": Object {
-        "Fn::GetAtt": Array [
-          "TopicBFC7AF6E",
-          "TopicName",
-        ],
-      },
-    },
-  },
-  "Resources": Object {
-    "TopicBFC7AF6E": Object {
-      "Type": "AWS::SNS::Topic",
     },
   },
 }
