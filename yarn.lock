@@ -782,9 +782,9 @@
     "@types/babel__traverse" "*"
 
 "@types/babel__generator@*":
-  version "7.6.1"
-  resolved "https://registry.yarnpkg.com/@types/babel__generator/-/babel__generator-7.6.1.tgz#4901767b397e8711aeb99df8d396d7ba7b7f0e04"
-  integrity sha512-bBKm+2VPJcMRVwNhxKu8W+5/zT7pwNEqeokFOmbvVSqGzFneNxYcEBro9Ac7/N9tlsaPYnZLK8J1LWKkMsLAew==
+  version "7.6.2"
+  resolved "https://registry.yarnpkg.com/@types/babel__generator/-/babel__generator-7.6.2.tgz#f3d71178e187858f7c45e30380f8f1b7415a12d8"
+  integrity sha512-MdSJnBjl+bdwkLskZ3NGFp9YcXGx5ggLpQQPqtgakVhsWK0hTtNYhjpZLlWQTviGTvF8at+Bvli3jV7faPdgeQ==
   dependencies:
     "@babel/types" "^7.0.0"
 
@@ -797,9 +797,9 @@
     "@babel/types" "^7.0.0"
 
 "@types/babel__traverse@*", "@types/babel__traverse@^7.0.6":
-  version "7.0.14"
-  resolved "https://registry.yarnpkg.com/@types/babel__traverse/-/babel__traverse-7.0.14.tgz#e99da8c075d4fb098c774ba65dabf7dc9954bd13"
-  integrity sha512-8w9szzKs14ZtBVuP6Wn7nMLRJ0D6dfB0VEBEyRgxrZ/Ln49aNMykrghM2FaNn4FJRzNppCSa0Rv9pBRM5Xc3wg==
+  version "7.0.15"
+  resolved "https://registry.yarnpkg.com/@types/babel__traverse/-/babel__traverse-7.0.15.tgz#db9e4238931eb69ef8aab0ad6523d4d4caa39d03"
+  integrity sha512-Pzh9O3sTK8V6I1olsXpCfj2k/ygO2q1X0vhhnDrEQyYLHZesWz+zMZMVcwXLCYf0U36EtmyYaFGPfXlTtDHe3A==
   dependencies:
     "@babel/types" "^7.3.0"
 
@@ -3892,9 +3892,9 @@ jsonparse@^1.2.0:
   integrity sha1-P02uSpH6wxX3EGL4UhzCOfE2YoA=
 
 jsonschema@^1.2.6:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/jsonschema/-/jsonschema-1.2.6.tgz#52b0a8e9dc06bbae7295249d03e4b9faee8a0c0b"
-  integrity sha512-SqhURKZG07JyKKeo/ir24QnS4/BV7a6gQy93bUSe4lUdNp0QNpIz2c9elWJQ9dpc5cQYY6cvCzgRwy0MQCLyqA==
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/jsonschema/-/jsonschema-1.2.7.tgz#4e6d6dc4d83dc80707055ba22c00ec6152c0e6e9"
+  integrity sha512-3dFMg9hmI9LdHag/BRIhMefCfbq1hicvYMy8YhZQorAdzOzWz7NjniSpn39yjpzUAMIWtGyyZuH2KNBloH7ZLw==
 
 jsprim@^1.2.2:
   version "1.4.1"
@@ -5915,9 +5915,9 @@ typescript@^3.9.5, typescript@~3.9.7:
   integrity sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
 
 uglify-js@^3.1.4:
-  version "3.10.4"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.10.4.tgz#dd680f5687bc0d7a93b14a3482d16db6eba2bfbb"
-  integrity sha512-kBFT3U4Dcj4/pJ52vfjCSfyLyvG9VYYuGYPmrPvAxRw/i7xHiT4VvCev+uiEMcEEiu6UNB6KgWmGtSUYIWScbw==
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.11.0.tgz#67317658d76c21e0e54d3224aee2df4ee6c3e1dc"
+  integrity sha512-e1KQFRCpOxnrJsJVqDUCjURq+wXvIn7cK2sRAx9XL3HYLL9aezOP4Pb1+Y3/o693EPk111Yj2Q+IUXxcpHlygQ==
 
 union-value@^1.0.0:
   version "1.0.1"
