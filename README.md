@@ -48,6 +48,9 @@ new cdk.CfnOutput(stackJP, 'TopicName', { value: topic.topicName })
 // second stack in US
 const stackUS = new cdk.Stack(app, 'demo-stack-us', { env: envUS })
 
+// ensure the dependency
+stackUS.addDependency(stackJP)
+
 // get the stackJP stack outputs from stackUS
 const outputs = new StackOutputs(stackUS, 'Outputs', { stack: stackJP })
 
