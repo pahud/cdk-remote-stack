@@ -35,6 +35,6 @@ jobs:
           title-or-body: "title"
           parameters: >
             [
-            {"keywords":["yarn upgrade","upgrade yarn"],"labels":["yarn/upgrade", "auto-merge"],"assignees":["pahud"]},
+            {"keywords":["yarn upgrade","upgrade yarn"],"labels":["yarn/upgrade", "auto-merge"],"assignees":["pahud"]}
             ]
           
