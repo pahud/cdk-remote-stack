@@ -10,13 +10,31 @@ jobs:
   label:
     runs-on: ubuntu-latest
     steps:
+#       - uses: Naturalclar/issue-action@f229cda
+#         with:
+#           github-token: "${{ secrets.GITHUB_TOKEN }}"
+#           title-or-body: "title"
+#           parameters: >
+#             [
+#             {"keywords":["yarn upgrade","upgrade yarn"],"labels":["yarn/upgrade"],"assignees":["pahud"]},
+#             {"keywords":["projen upgrade","upgrade projen"],"labels":["projen/upgrade"],"assignees":["pahud"]}
+#             ]
       - uses: Naturalclar/issue-action@f229cda
+        if: github.event.pull_request.user.login == 'cdk-automation' && contains(github.event.pull_request.title, 'upgrade projen')
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
           title-or-body: "title"
           parameters: >
             [
-            {"keywords":["yarn upgrade","upgrade yarn"],"labels":["yarn/upgrade"],"assignees":["pahud"]},
-            {"keywords":["projen upgrade","upgrade projen"],"labels":["projen/upgrade"],"assignees":["pahud"]}
+            {"keywords":["projen upgrade","upgrade projen"],"labels":["projen/upgrade", "auto-merge"],"assignees":["pahud"]}
+            ]
+      - uses: Naturalclar/issue-action@f229cda
+        if: github.event.pull_request.user.login == 'cdk-automation' && contains(github.event.pull_request.title, 'yarn upgrade')
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          title-or-body: "title"
+          parameters: >
+            [
+            {"keywords":["yarn upgrade","upgrade yarn"],"labels":["yarn/upgrade", "auto-merge"],"assignees":["pahud"]},
             ]
           
