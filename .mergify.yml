@@ -20,3 +20,12 @@ pull_request_rules:
       merge:
         method: merge
         commit_message: title+body
+  - name: Merge pull requests for projen upgrade if CI passes
+    conditions:
+      - author=cdk-automation
+      - status-success=build
+      - "title=chore: upgrade projen"
+    actions:
+      merge:
+        method: merge
+        commit_message: title+body

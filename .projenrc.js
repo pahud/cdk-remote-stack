@@ -44,6 +44,21 @@ const project = new ConstructLibraryAws({
   }
 });
 
+project.mergify.addRule({
+  name: 'Merge pull requests for projen upgrade if CI passes',
+  conditions: [
+    'author=cdk-automation',
+    'status-success=build',
+    'title=chore: upgrade projen',
+  ],
+  actions: {
+    merge: {
+      method: 'merge',
+      commit_message: 'title+body',
+    },
+  },
+});
+
 const common_exclude = ['cdk.out', 'cdk.context.json', 'images', 'yarn-error.log'];
 project.npmignore.exclude(...common_exclude);
 project.gitignore.exclude(...common_exclude);
