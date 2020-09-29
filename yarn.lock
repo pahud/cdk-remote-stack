@@ -1890,9 +1890,9 @@ decamelize@^4.0.0:
   integrity sha512-9iE1PgSik9HeIIw2JO94IidnE3eBoQrFJ3w7sFuzSX4DpmZ3v5sZpUiV5Swcf6mQEF+Y0ru8Neo+p+nyh2J+hQ==
 
 decimal.js@^10.2.0:
-  version "10.2.0"
-  resolved "https://registry.yarnpkg.com/decimal.js/-/decimal.js-10.2.0.tgz#39466113a9e036111d02f82489b5fd6b0b5ed231"
-  integrity sha512-vDPw+rDgn3bZe1+F/pyEwb1oMG2XTlRVgAa6B4KccTEpYgF8w6eQllVbQcfIJnZyvzFtFpxnpGtx8dd7DJp/Rw==
+  version "10.2.1"
+  resolved "https://registry.yarnpkg.com/decimal.js/-/decimal.js-10.2.1.tgz#238ae7b0f0c793d3e3cea410108b35a2c01426a3"
+  integrity sha512-KaL7+6Fw6i5A2XSnsbhm/6B+NuEA7TZ4vqxnd5tXz9sbKtrN9Srj8ab4vKVdK8YAqZO9P1kg45Y6YLoduPf+kw==
 
 decode-uri-component@^0.2.0:
   version "0.2.0"
@@ -4765,9 +4765,9 @@ progress@^2.0.0:
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
 projen@^0.3.74:
-  version "0.3.74"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.3.74.tgz#160fec82635cb22702864fca7e57968ed983fb85"
-  integrity sha512-0+LrXj5yNlbR/++n3ViqqUb2/PqhZIiZtDAc0H0C63WKKh1Qr/iWiEZSNJjCMKS62PN6Myc0a7N7m1Q0EilazQ==
+  version "0.3.75"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.3.75.tgz#dfdfd94c235687033505b0bfdda07ef7a89f4963"
+  integrity sha512-C1tt7ZpGmsSDOT8Os9w/Eqqd5d1HnC80ncsO8+Fst98JEwT4L1T0nojUJ5mWPWjW1dVO7iDBQqrfG28zAjpeKA==
   dependencies:
     chalk "^4.1.0"
     decamelize "^4.0.0"
