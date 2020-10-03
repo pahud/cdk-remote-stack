@@ -17,8 +17,7 @@ jobs:
         run: |-
           git config user.name "Auto-yarn-upgrade"
           git config user.email "github-actions@github.com"
-      - run: yarn upgrade
-      - run: git restore package.json
+      - run: yarn upgrade && yarn projen:upgrade
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
@@ -26,6 +25,6 @@ jobs:
           commit-message: "chore: yarn upgradae"
           branch: auto/yarn-upgrade
           title: "chore: yarn upgrade"
-          body: This PR runs the yarn upgrade
+          body: This PR runs the yarn upgrade && yarn projen:upgrade
     container:
       image: jsii/superchain
