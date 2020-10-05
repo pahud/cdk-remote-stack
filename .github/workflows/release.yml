@@ -15,17 +15,13 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10.17.0
-      - run: npx projen@0.3.84
-      - name: Anti-tamper check
-        run: git diff --exit-code
+      - run: npx projen@0.3.90
       - name: Set git identity
         run: |-
           git config user.name "Auto-bump"
           git config user.email "github-actions@github.com"
       - run: yarn bump
       - run: yarn build
-      - name: Anti-tamper check
-        run: git diff --exit-code
       - run: git push --follow-tags origin $GITHUB_REF
       - name: Upload artifact
         uses: actions/upload-artifact@v2.1.1
