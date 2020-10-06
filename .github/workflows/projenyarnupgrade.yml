@@ -12,7 +12,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10.17.0
-      - run: npx projen@0.3.90
+      - run: yarn install --frozen-lockfile
+      - run: yarn projen
       - run: yarn upgrade
       - run: yarn projen:upgrade
       - name: Create Pull Request
