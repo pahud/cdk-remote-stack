@@ -1636,9 +1636,9 @@ concat-stream@^2.0.0:
     typedarray "^0.0.6"
 
 constructs@^3.0.4:
-  version "3.0.15"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.0.15.tgz#77a9597b612c8525dfc7bbf3bfd81dabe93fe7d4"
-  integrity sha512-v6yLisiK9gwilOcYIGxhNbirqITAu5f7ZnsbkbdKTZhXOmf8aRj05WiMJ+NpDtwUQtGZvwo4yatn0WqTkq9woA==
+  version "3.0.17"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.0.17.tgz#98ae00515f1caa8a76bacaa8060eb1f703fd80b0"
+  integrity sha512-XRKAK/+7Bd+WWp0y09mZzfjGm+f/AWI6lUIFVW4FcrVE0IJCTxjbwqp0sqrHxRBJcb/dxIBmTcHYljmSEiHO4Q==
 
 contains-path@^0.1.0:
   version "0.1.0"
@@ -2200,9 +2200,9 @@ es-to-primitive@^1.2.1:
     is-symbol "^1.0.2"
 
 escalade@^3.0.2:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/escalade/-/escalade-3.1.0.tgz#e8e2d7c7a8b76f6ee64c2181d6b8151441602d4e"
-  integrity sha512-mAk+hPSO8fLDkhV7V0dXazH5pDc6MrjBTPyD3VeKzxnVFjH1MIxbCdqGZB9O8+EwWakZs3ZCbDS4IpRt79V1ig==
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/escalade/-/escalade-3.1.1.tgz#d8cfdc7000965c5a0174b4a82eaa5c0552742e40"
+  integrity sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==
 
 escape-string-regexp@^1.0.5:
   version "1.0.5"
@@ -4886,10 +4886,10 @@ progress@^2.0.0:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.3.108:
-  version "0.3.108"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.3.108.tgz#6485135e25b83c1352656a1b37974eecb1716476"
-  integrity sha512-8dYpvgcKQxsNs7MEgdbdaCatAuVOGnjtj2nLQcU4Oe1pKQwuvttSBwtZ7QGuw27VpZevG26P+R+QSxnwL8dVCA==
+projen@^0.3.109:
+  version "0.3.109"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.3.109.tgz#f4b993f56859ce1a519da60c02d400dc79fd9d45"
+  integrity sha512-gE6vZzN/uTIPbPcXCd928xairLIcvn94g3SFhYgnW9yzW8f0o/kql/eIJjzugvFBuju08cwIJUkMsOd3R0VViQ==
   dependencies:
     "@iarna/toml" "^2.2.5"
     chalk "^4.1.0"
