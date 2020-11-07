@@ -1639,9 +1639,9 @@ concat-stream@^2.0.0:
     typedarray "^0.0.6"
 
 constructs@^3.2.0:
-  version "3.2.14"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.2.14.tgz#65bdb25b7e9eb39a708f0aaed982220652c9f15a"
-  integrity sha512-T/IwPvXUQpXXSyV1P0toJD92uQrjSlWbZ/pE4ydiDoqD1WVjTfyH3KVWP7KUsBCdfPRPOPx7OY0dIJCunFrVoQ==
+  version "3.2.15"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.2.15.tgz#073046542822c765817a65fb83878cc52cd804e0"
+  integrity sha512-XY/1/kvNTo07NJ371NCWONeZXsVWeLjyu7fQ/4Im1D3GDdCdZQfE2iJPWd9NuHs+h5CO8X8DrvUB+UtH9WyDVQ==
 
 contains-path@^0.1.0:
   version "0.1.0"
@@ -2185,11 +2185,12 @@ es-abstract@^1.18.0-next.0, es-abstract@^1.18.0-next.1:
     string.prototype.trimstart "^1.0.1"
 
 es-get-iterator@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/es-get-iterator/-/es-get-iterator-1.1.0.tgz#bb98ad9d6d63b31aacdc8f89d5d0ee57bcb5b4c8"
-  integrity sha512-UfrmHuWQlNMTs35e1ypnvikg6jCz3SK8v8ImvmDsh36fCVUR1MqoFDiyn0/k52C8NqO3YsO8Oe0azeesNuqSsQ==
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/es-get-iterator/-/es-get-iterator-1.1.1.tgz#b93ddd867af16d5118e00881396533c1c6647ad9"
+  integrity sha512-qorBw8Y7B15DVLaJWy6WdEV/ZkieBcu6QCq/xzWzGOKJqgG1j754vXRfZ3NY7HSShneqU43mPB4OkQBTkvHhFw==
   dependencies:
-    es-abstract "^1.17.4"
+    call-bind "^1.0.0"
+    get-intrinsic "^1.0.1"
     has-symbols "^1.0.1"
     is-arguments "^1.0.4"
     is-map "^2.0.1"
@@ -2721,7 +2722,7 @@ get-caller-file@^2.0.1, get-caller-file@^2.0.5:
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-2.0.5.tgz#4f94412a82db32f36e3b0b9741f8a97feb031f7e"
   integrity sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==
 
-get-intrinsic@^1.0.0:
+get-intrinsic@^1.0.0, get-intrinsic@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/get-intrinsic/-/get-intrinsic-1.0.1.tgz#94a9768fcbdd0595a1c9273aacf4c89d075631be"
   integrity sha512-ZnWP+AmS1VUaLgTRy47+zKtjTxz+0xMpx3I52i+aalBK1QP19ggLF3Db89KJX7kjfOfP2eoa01qc++GwPgufPg==
@@ -4927,10 +4928,10 @@ progress@^2.0.0:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.3.155:
-  version "0.3.155"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.3.155.tgz#2ac03fa5cc1a24ddddaa496e515ef7f87f686f02"
-  integrity sha512-KSFR5eXKHNav9Afg+MoVbYdSRc+GwNbwCZkzv+xB8lazHLsypfKw+V/IwKM0QfcbCwJGXRl5f6WKUXs/REDE2A==
+projen@^0.3.156:
+  version "0.3.156"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.3.156.tgz#6966c89bb131e0d7a7bc33d59bc7dfe6cd92141b"
+  integrity sha512-TXhhR85sdcpkm8nSaUCDkvahLEdUY7fofSG+n9jafZSSPW9I2v72P2GDB7O/P+JEJDdeiKde8IaI+qgP3nPrHA==
   dependencies:
     "@iarna/toml" "^2.2.5"
     chalk "^4.1.0"
