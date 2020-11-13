@@ -822,9 +822,9 @@
     "@babel/types" "^7.0.0"
 
 "@types/babel__template@*":
-  version "7.0.3"
-  resolved "https://registry.yarnpkg.com/@types/babel__template/-/babel__template-7.0.3.tgz#b8aaeba0a45caca7b56a5de9459872dde3727214"
-  integrity sha512-uCoznIPDmnickEi6D0v11SBpW0OuVqHJCa7syXqQHy5uktSCreIlt0iglsCnmvz8yCb38hGcWeseA8cWJSwv5Q==
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/@types/babel__template/-/babel__template-7.4.0.tgz#0c888dd70b3ee9eebb6e4f200e809da0076262be"
+  integrity sha512-NTPErx4/FiPCGScH7foPyr+/1Dkzkni+rHiYHHoTjvwou7AQzJkNeD60A9CXRy+ZEN2B1bggmkTMCDb+Mv5k+A==
   dependencies:
     "@babel/parser" "^7.1.0"
     "@babel/types" "^7.0.0"
@@ -1639,9 +1639,9 @@ concat-stream@^2.0.0:
     typedarray "^0.0.6"
 
 constructs@^3.2.0:
-  version "3.2.24"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.2.24.tgz#52b1dbf540a92a41cb96f4e41b381c84ccc41811"
-  integrity sha512-mqhUQ+jR12UrrTaDaX5Y+IjinS5bWltQ/RH619nps63+ADphvmQuloxsCfQfYKwS8+A+J10JJpajsOZs+JQNMg==
+  version "3.2.26"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.2.26.tgz#7c8218ba4447f7d95454f637c714c0c088be8e09"
+  integrity sha512-KdDDdWNtoUnfnAbXYyPQQxRXuvFd+w18oGJWcv7ImWD9WfogH/PuOovNU59LTctcMOh77Uch0d8gXV/qhWhoDQ==
 
 contains-path@^0.1.0:
   version "0.1.0"
@@ -4928,10 +4928,10 @@ progress@^2.0.0:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.3.166:
-  version "0.3.166"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.3.166.tgz#62b5445c64732aa38ee38304e2570063a463c3d6"
-  integrity sha512-BgP3hqaHmwVmyimzlCRbV6Up7SyxAPNyP7q74OOcqa9NGyMjVriqaKXUnHZ7APXg0Kw8z9UHUnEnHkzlD/IYRA==
+projen@^0.3.167:
+  version "0.3.167"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.3.167.tgz#b2e76466e4bd1bb4bbe4fdf7aa0afc6c63be5cd9"
+  integrity sha512-ksjGLU/0dbhKmQWt93nrdzEX0tHpjvo6gkH0Wf2KtIStVpSAdY2Z2OIbFdigWifpNiRW0ALq0bj/+rgtrvtwUA==
   dependencies:
     "@iarna/toml" "^2.2.5"
     chalk "^4.1.0"
@@ -6063,9 +6063,9 @@ type-fest@^0.13.1:
   integrity sha512-34R7HTnG0XIJcBSn5XhDd7nNFPRcXYRZrBB2O2jdKqYODldSzBAqzsWoZYYvduky73toYS/ESqxPvkDf/F0XMg==
 
 type-fest@^0.18.0:
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.18.0.tgz#2edfa6382d48653707344f7fccdb0443d460e8d6"
-  integrity sha512-fbDukFPnJBdn2eZ3RR+5mK2slHLFd6gYHY7jna1KWWy4Yr4XysHuCdXRzy+RiG/HwG4WJat00vdC2UHky5eKiQ==
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.18.1.tgz#db4bc151a4a2cf4eebf9add5db75508db6cc841f"
+  integrity sha512-OIAYXk8+ISY+qTOwkHtKqzAuxchoMiD9Udx+FSGQDuiRR+PJKJHc2NJAXlbhkGwTt/4/nKZxELY1w3ReWOL8mw==
 
 type-fest@^0.6.0:
   version "0.6.0"
