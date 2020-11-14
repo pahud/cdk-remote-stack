@@ -1639,9 +1639,9 @@ concat-stream@^2.0.0:
     typedarray "^0.0.6"
 
 constructs@^3.2.0:
-  version "3.2.26"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.2.26.tgz#7c8218ba4447f7d95454f637c714c0c088be8e09"
-  integrity sha512-KdDDdWNtoUnfnAbXYyPQQxRXuvFd+w18oGJWcv7ImWD9WfogH/PuOovNU59LTctcMOh77Uch0d8gXV/qhWhoDQ==
+  version "3.2.27"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.2.27.tgz#8e17183bb7b298579d8afc09ce90e72eda6ad6e1"
+  integrity sha512-wwR6Mlv6IZdv7BNlVDis6aCDcVncS58a2qsTGem36FHoGmxRgVZT+XO7XC9wbNbBf7VIJK9hOZ1UW/4XbRJTog==
 
 contains-path@^0.1.0:
   version "0.1.0"
@@ -5617,9 +5617,9 @@ sshpk@^1.7.0:
     tweetnacl "~0.14.0"
 
 stack-utils@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/stack-utils/-/stack-utils-2.0.2.tgz#5cf48b4557becb4638d0bc4f21d23f5d19586593"
-  integrity sha512-0H7QK2ECz3fyZMzQ8rH0j2ykpfbnd20BFtfg/SqVC2+sCTtcw0aDTGB7dk+de4U4uUeuz6nOtJcrkFFLG1B0Rg==
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/stack-utils/-/stack-utils-2.0.3.tgz#cd5f030126ff116b78ccb3c027fe302713b61277"
+  integrity sha512-gL//fkxfWUsIlFL2Tl42Cl6+HFALEaB1FU76I/Fy+oZjRreP7OPMXFlGbxM7NQsI0ZpUfw76sHnv0WNYuTb7Iw==
   dependencies:
     escape-string-regexp "^2.0.0"
 
