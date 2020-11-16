@@ -13,6 +13,11 @@ export interface StackOutputsProps {
    * The remote CDK stack to get the outputs from.
    */
   readonly stack: cdk.Stack;
+
+  /**
+   * An optinal hash field to push stack changed by user
+   */
+  readonly hash?: string;
 }
 
 /**
@@ -47,7 +52,8 @@ export class StackOutputs extends cdk.Construct {
       serviceToken: myProvider.serviceToken,
       properties: {
         stackName: props.stack.stackName,
-        regionName: cdk.Stack.of(props.stack).region,
+        regionName: props.stack.region,
+        hash: props.hash,
       },
     });
   }
