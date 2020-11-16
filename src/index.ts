@@ -1,9 +1,9 @@
-import * as cdk from '@aws-cdk/core';
+import * as path from 'path';
 import { PolicyStatement } from '@aws-cdk/aws-iam';
 import * as lambda from '@aws-cdk/aws-lambda';
 import * as logs from '@aws-cdk/aws-logs';
+import * as cdk from '@aws-cdk/core';
 import * as cr from '@aws-cdk/custom-resources';
-import * as path from 'path';
 
 /**
  * Properties of the StackOutputs
@@ -13,6 +13,11 @@ export interface StackOutputsProps {
    * The remote CDK stack to get the outputs from.
    */
   readonly stack: cdk.Stack;
+  /**
+   * Indicate whether always update the custom resource to get the new stack output
+   * @default true
+   */
+  readonly alwaysUpdate?: boolean;
 }
 
 /**
@@ -25,7 +30,7 @@ export class StackOutputs extends cdk.Construct {
   readonly outputs: cdk.CustomResource;
 
   constructor(scope: cdk.Construct, id: string, props: StackOutputsProps) {
-    super(scope, id)
+    super(scope, id);
 
     const onEvent = new lambda.Function(this, 'MyHandler', {
       runtime: lambda.Runtime.PYTHON_3_8,
@@ -48,6 +53,7 @@ export class StackOutputs extends cdk.Construct {
       properties: {
         stackName: props.stack.stackName,
         regionName: cdk.Stack.of(props.stack).region,
+        randomString: props.alwaysUpdate == false ? undefined : randomString(),
       },
     });
   }
@@ -57,7 +63,13 @@ export class StackOutputs extends cdk.Construct {
    * @param key output key
    */
   public getAttString(key: string) {
-    return this.outputs.getAttString(key)
+    return this.outputs.getAttString(key);
   }
 
+}
+
+
+function randomString() {
+  // Crazy
+  return Math.random().toString(36).replace(/[^a-z0-9]+/g, '');
 }

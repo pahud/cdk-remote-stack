@@ -4,17 +4,7 @@ exports[`integ snapshot validation 1`] = `
 Object {
   "Outputs": Object {
     "TopicName": Object {
-      "Value": Object {
-        "Fn::GetAtt": Array [
-          "TopicBFC7AF6E",
-          "TopicName",
-        ],
-      },
-    },
-  },
-  "Resources": Object {
-    "TopicBFC7AF6E": Object {
-      "Type": "AWS::SNS::Topic",
+      "Value": "foo",
     },
   },
 }

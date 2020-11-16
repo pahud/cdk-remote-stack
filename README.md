@@ -24,7 +24,6 @@ Let's say we have two cross-region CDK stacks in the same cdk app:
 ```ts
 import { StackOutputs } from 'cdk-remote-stack';
 import * as cdk from '@aws-cdk/core';
-import * as sns from '@aws-cdk/aws-sns';
 
 const app = new cdk.App();
 
@@ -41,9 +40,7 @@ const envUS = {
 // first stack in JP
 const stackJP = new cdk.Stack(app, 'demo-stack-jp', { env: envJP })
 
-const topic = new sns.Topic(stackJP, 'Topic');
-
-new cdk.CfnOutput(stackJP, 'TopicName', { value: topic.topicName })
+new cdk.CfnOutput(stackJP, 'TopicName', { value: 'foo' })
 
 // second stack in US
 const stackUS = new cdk.Stack(app, 'demo-stack-us', { env: envUS })
@@ -58,4 +55,18 @@ const remoteOutputValue = outputs.getAttString('TopicName')
 
 // the value should be exactly the same with the output value of `TopicName`
 new cdk.CfnOutput(stackUS, 'RemoteTopicName', { value: remoteOutputValue })
+```
+
+
+## always get the latest stack output
+
+By default, the `StackOutputs` construct will always try to get the latest output from the source stack, you may opt out by setting `alwaysUpdate` to `false` to turn this feature off.
+
+For example:
+
+```ts
+const outputs = new StackOutputs(stackUS, 'Outputs', { 
+  stack: stackJP,
+  alwaysUpdate: false,
+})
 ```

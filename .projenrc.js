@@ -38,7 +38,6 @@ const project = new AwsCdkConstructLibrary({
     '@aws-cdk/aws-iam',
     '@aws-cdk/aws-lambda',
     '@aws-cdk/aws-logs',
-    '@aws-cdk/aws-sns',
     '@aws-cdk/custom-resources',
   ],
 
