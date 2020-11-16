@@ -35,6 +35,7 @@ new StackOutputs(scope: Construct, id: string, props: StackOutputsProps)
 * **id** (<code>string</code>)  *No description*
 * **props** (<code>[StackOutputsProps](#cdk-remote-stack-stackoutputsprops)</code>)  *No description*
   * **stack** (<code>[Stack](#aws-cdk-core-stack)</code>)  The remote CDK stack to get the outputs from. 
+  * **alwaysUpdate** (<code>boolean</code>)  Indicate whether always update the custom resource to get the new stack output. __*Default*__: true
 
 
 
@@ -73,6 +74,7 @@ Properties of the StackOutputs.
 Name | Type | Description 
 -----|------|-------------
 **stack** | <code>[Stack](#aws-cdk-core-stack)</code> | The remote CDK stack to get the outputs from.
+**alwaysUpdate**? | <code>boolean</code> | Indicate whether always update the custom resource to get the new stack output.<br/>__*Default*__: true
 
 
 
