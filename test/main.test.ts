@@ -1,4 +1,3 @@
-import * as sns from '@aws-cdk/aws-sns';
 import * as cdk from '@aws-cdk/core';
 import { StackOutputs } from '../src';
 import '@aws-cdk/assert/jest';
@@ -19,9 +18,7 @@ test('create the ServerlessAPI', () => {
   // first stack in JP
   const stackJP = new cdk.Stack(app, 'demo-stack-jp', { env: envJP });
 
-  const topic = new sns.Topic(stackJP, 'Topic');
-
-  new cdk.CfnOutput(stackJP, 'TopicName', { value: topic.topicName });
+  new cdk.CfnOutput(stackJP, 'TopicName', { value: 'foo' });
 
   // second stack in US
   const stackUS = new cdk.Stack(app, 'demo-stack-us', { env: envUS });
