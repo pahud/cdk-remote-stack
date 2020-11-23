@@ -1641,9 +1641,9 @@ concat-stream@^2.0.0:
     typedarray "^0.0.6"
 
 constructs@^3.2.0:
-  version "3.2.37"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.2.37.tgz#ebced4a0fbfa81be8db730cbe7a82d18410bebcb"
-  integrity sha512-Z2dVwVaaw8cDIOeWT5smfgC4BLhkXK7JAfUUDtoB5WhUIIUZpRX+Pd5ZE6UrEuXSQkaJHUT6MVGxgBFZR3DpxQ==
+  version "3.2.38"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.2.38.tgz#40168c33ddf56948ece101775223e5c0f2cb3388"
+  integrity sha512-SNGmqvT9yFtkrIX+FjIg7GaFvzhffis46kYvknr3vVjuCXSSAtivPS28mxAOdv23Faq6FBU0+cX/XdZa2g/glw==
 
 contains-path@^0.1.0:
   version "0.1.0"
@@ -6107,9 +6107,9 @@ typescript@^3.9.5, typescript@~3.9.7:
   integrity sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
 
 uglify-js@^3.1.4:
-  version "3.11.6"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.11.6.tgz#144b50d3e05eadd3ad4dd047c60ca541a8cd4e9c"
-  integrity sha512-oASI1FOJ7BBFkSCNDZ446EgkSuHkOZBuqRFrwXIKWCoXw8ZXQETooTQjkAcBS03Acab7ubCKsXnwuV2svy061g==
+  version "3.12.0"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.12.0.tgz#b943f129275c41d435eb54b643bbffee71dccf57"
+  integrity sha512-8lBMSkFZuAK7gGF8LswsXmir8eX8d2AAMOnxSDWjKBx/fBR6MypQjs78m6ML9zQVp1/hD4TBdfeMZMC7nW1TAA==
 
 union-value@^1.0.0:
   version "1.0.1"
