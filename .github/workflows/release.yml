@@ -11,16 +11,23 @@ jobs:
     env:
       CI: "true"
     steps:
-      - uses: actions/checkout@v2
-      - run: yarn install --frozen-lockfile
-      - run: yarn projen
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn install --check-files --frozen-lockfile
+      - name: Synthesize project files
+        run: npx projen
       - name: Set git identity
         run: |-
           git config user.name "Auto-bump"
           git config user.email "github-actions@github.com"
-      - run: yarn run bump
-      - run: yarn run build
-      - run: git push --follow-tags origin $GITHUB_REF
+      - run: npx projen bump
+      - name: Build
+        run: npx projen build
+      - name: Push changes
+        run: git push --follow-tags origin $BRANCH
+        env:
+          BRANCH: ${{ github.ref }}
       - name: Upload artifact
         uses: actions/upload-artifact@v2.1.1
         with:
