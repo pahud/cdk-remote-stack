@@ -12,6 +12,7 @@ const project = new AwsCdkConstructLibrary({
   description: PROJECT_DESCRIPTION,
   repository: 'https://github.com/pahud/cdk-remote-stack.git',
   antitamper: false,
+  dependabot: false,
   keywords: [
     'aws',
     'remote',
