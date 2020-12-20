@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.111 (2020-12-19)
+
+### 0.1.110 (2020-11-24)
+
+### 0.1.109 (2020-11-24)
+
+### 0.1.108 (2020-11-23)
+
+### 0.1.107 (2020-11-22)
+
+### 0.1.106 (2020-11-20)
+
+### 0.1.105 (2020-11-20)
+
+### 0.1.104 (2020-11-19)
+
+### 0.1.103 (2020-11-18)
+
+### 0.1.102 (2020-11-18)
+
+### 0.1.101 (2020-11-17)
+
+### 0.1.100 (2020-11-17)
+
+### 0.1.99 (2020-11-16)
+
+
+### Features
+
+* **core:** support always get the output from the source stack ([#120](https://github.com/pahud/cdk-remote-stack/issues/120)) ([6df8e9b](https://github.com/pahud/cdk-remote-stack/commit/6df8e9b94cd4cc3a45edc24a77cd94c69c51c284)), closes [#118](https://github.com/pahud/cdk-remote-stack/issues/118)
+
 ### 0.1.98 (2020-11-16)
 
 ### 0.1.97 (2020-11-16)

@@ -1,13 +1,9 @@
-const {
-  AwsCdkConstructLibrary,
-  GithubWorkflow,
-} = require('projen');
+const { AwsCdkConstructLibrary } = require('projen');
 
-const AWS_CDK_LATEST_RELEASE = '1.62.0';
+const AWS_CDK_LATEST_RELEASE = '1.77.0';
 const PROJECT_NAME = 'cdk-remote-stack';
 const PROJECT_DESCRIPTION = 'Get outputs from cross-regional AWS CDK stacks';
 const AUTOMATION_TOKEN = 'AUTOMATION_GITHUB_TOKEN';
-
 
 const project = new AwsCdkConstructLibrary({
   authorName: "Pahud Hsieh",
@@ -47,10 +43,8 @@ const project = new AwsCdkConstructLibrary({
   }
 });
 
-
-
 // create a custom projen and yarn upgrade workflow
-const workflow = new GithubWorkflow(project, 'ProjenYarnUpgrade');
+workflow = project.github.addWorkflow('ProjenYarnUpgrade');
 
 workflow.on({
   schedule: [{
@@ -63,46 +57,29 @@ workflow.addJobs({
   upgrade: {
     'runs-on': 'ubuntu-latest',
     'steps': [
-      ...project.workflowBootstrapSteps,
-
-      // yarn upgrade
+      { uses: 'actions/checkout@v2' },
       {
-        run: `yarn upgrade`
+        uses: 'actions/setup-node@v1',
+        with: {
+          'node-version': '10.17.0',
+        },
       },
-
-      // upgrade projen
-      {
-        run: `yarn projen:upgrade`
-      },
-
+      { run: 'yarn upgrade' },
+      { run: 'yarn projen:upgrade' },
       // submit a PR
       {
         name: 'Create Pull Request',
         uses: 'peter-evans/create-pull-request@v3',
         with: {
-          'token': '${{ secrets.' + AUTOMATION_TOKEN + '}}',
+          'token': '${{ secrets.' + AUTOMATION_TOKEN + ' }}',
           'commit-message': 'chore: upgrade projen',
           'branch': 'auto/projen-upgrade',
           'title': 'chore: upgrade projen and yarn',
           'body': 'This PR upgrades projen and yarn upgrade to the latest version',
-        }
+          'labels': 'auto-merge',
+        },
       },
     ],
-  },
-});
-
-project.mergify.addRule({
-  name: 'Merge pull requests for projen upgrade if CI passes',
-  conditions: [
-    'author=cdk-automation',
-    'status-success=build',
-    'title=chore: upgrade projen',
-  ],
-  actions: {
-    merge: {
-      method: 'merge',
-      commit_message: 'title+body',
-    },
   },
 });
 

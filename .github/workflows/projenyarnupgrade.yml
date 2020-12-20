@@ -12,15 +12,14 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10.17.0
-      - run: yarn install --frozen-lockfile
-      - run: yarn projen
       - run: yarn upgrade
       - run: yarn projen:upgrade
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.AUTOMATION_GITHUB_TOKEN}}
+          token: ${{ secrets.AUTOMATION_GITHUB_TOKEN }}
           commit-message: "chore: upgrade projen"
           branch: auto/projen-upgrade
           title: "chore: upgrade projen and yarn"
           body: This PR upgrades projen and yarn upgrade to the latest version
+          labels: auto-merge
