@@ -1089,9 +1089,9 @@ ajv@^6.10.0, ajv@^6.12.3, ajv@^6.12.4:
     uri-js "^4.2.2"
 
 ajv@^7.0.2:
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/ajv/-/ajv-7.0.2.tgz#04ccc89a93449c64382fe0846d45a7135d986dbc"
-  integrity sha512-qIaxO9RXjaXyO21tJr0EvwPcZa49m64GcXCU8ZrLjCAlFyMuOcPpI560So4A11M1WsKslJYIXn6jSyG5P0xIeg==
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-7.0.3.tgz#13ae747eff125cafb230ac504b2406cf371eece2"
+  integrity sha512-R50QRlXSxqXcQP5SvKUrw8VZeypvo12i2IX0EeR5PiZ7bEKeHWgzgo264LDadUsCU42lTJVhFikTqJwNeH34gQ==
   dependencies:
     fast-deep-equal "^3.1.1"
     json-schema-traverse "^1.0.0"
@@ -1697,9 +1697,9 @@ concat-stream@^2.0.0:
     typedarray "^0.0.6"
 
 constructs@^3.2.0:
-  version "3.2.89"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.2.89.tgz#f2cc9525100ea6f4224f251c67026b95b589b5b6"
-  integrity sha512-b8tn6ttheQz51fnoUqLO1/ubHxH+ycnrt089BQY1b6T9QbyX1hXGeqCEiVZxBfuYUaMFg64dOdr/tHu4e+LUDw==
+  version "3.2.90"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.2.90.tgz#b06816ab2b08d7d4d985fb0b20fe2a5cd5f1dfee"
+  integrity sha512-Hi0MN1NQOrqVUXE2YGQ0GL6LLPW7R9WP1QYOXvI2OW0wX43zd5sDT0D8PE116EKF8nRAFQenUPlD2EdgxoHPDg==
 
 contains-path@^0.1.0:
   version "0.1.0"
@@ -3961,9 +3961,9 @@ jsii-diff@^1.16.0:
     yargs "^16.1.1"
 
 jsii-docgen@^1.5.5:
-  version "1.8.7"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-1.8.7.tgz#f3f33d0e3297901f26334249bd63fe30182a2da4"
-  integrity sha512-HZTK8z9WCoFC6b0ybpBk3YzxmPTXk1AVjRl86noUodLRYlNjTbYLpMzNuEXemtqlDK2OA+3khkaqiZhF7i/VDA==
+  version "1.8.8"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-1.8.8.tgz#14f2500cda07136a076cafc460307153292df1a7"
+  integrity sha512-HkkVLDibMPlOUQeSoyt2CPNWD5sm0kzkq9Fw3iZBckRyJuIlszAabvuOzph+s5AouODQOpmenBKUhw7UtoQgqQ==
   dependencies:
     "@jsii/spec" "^1.16.0"
     fs-extra "^9.0.1"
