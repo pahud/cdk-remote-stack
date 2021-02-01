@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.134](https://github.com/pahud/cdk-remote-stack/compare/v0.1.133...v0.1.134) (2021-02-01)
+
 ### [0.1.133](https://github.com/pahud/cdk-remote-stack/compare/v0.1.132...v0.1.133) (2021-01-12)
 
 ### [0.1.132](https://github.com/pahud/cdk-remote-stack/compare/v0.1.131...v0.1.132) (2021-01-11)
