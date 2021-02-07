@@ -20,7 +20,7 @@ const project = new AwsCdkConstructLibrary({
     'cross-stack',
     'cross-account',
   ],
-
+  defaultReleaseBranch: 'master',
   catalog: {
     twitter: 'pahudnet',
     announce: false,
