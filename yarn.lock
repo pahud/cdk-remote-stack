@@ -1552,9 +1552,9 @@ camelcase@^6.0.0, camelcase@^6.2.0:
   integrity sha512-c7wVvbw3f37nuobQNtgsgG9POC9qMbNuMQmTCqZv23b6MIz0fcYpBiOlv9gEN/hdLdnZTDQhg6e9Dq5M1vKvfg==
 
 caniuse-lite@^1.0.30001181:
-  version "1.0.30001191"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001191.tgz#bacb432b6701f690c8c5f7c680166b9a9f0843d9"
-  integrity sha512-xJJqzyd+7GCJXkcoBiQ1GuxEiOBCLQ0aVW9HMekifZsAVGdj5eJ4mFB9fEhSHipq9IOk/QXFJUiIr9lZT+EsGw==
+  version "1.0.30001192"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001192.tgz#b848ebc0ab230cf313d194a4775a30155d50ae40"
+  integrity sha512-63OrUnwJj5T1rUmoyqYTdRWBqFFxZFlyZnRRjDR8NSUQFB6A+j/uBORU/SyJ5WzDLg4SPiZH40hQCBNdZ/jmAw==
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -1767,9 +1767,9 @@ concat-stream@^2.0.0:
     typedarray "^0.0.6"
 
 constructs@^3.2.0:
-  version "3.3.40"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.3.40.tgz#4958149633526e2ddf8d9de3e816abf9321d1e47"
-  integrity sha512-SO2Xi0ZDvEFcmHl6mm0X7BvmTl9BLT+AJvdwrdwjhYBz1aUzWWgO59U6TgUpndx1RTH6YVoAJEqw+38m8lXJew==
+  version "3.3.42"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.3.42.tgz#7ae02f12458451e6fcedb625741d3db882e874f2"
+  integrity sha512-riHB9gD9OzmAhMasP/uNl63GW8THwqZlsrwyzMSH6juURLjqwnMBx1EqUX1XweSzmYwmdxJfZQYjKNhwYJYz/Q==
 
 contains-path@^0.1.0:
   version "0.1.0"
@@ -2655,9 +2655,9 @@ fast-levenshtein@^2.0.6, fast-levenshtein@~2.0.6:
   integrity sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
 
 fastq@^1.6.0:
-  version "1.10.1"
-  resolved "https://registry.yarnpkg.com/fastq/-/fastq-1.10.1.tgz#8b8f2ac8bf3632d67afcd65dac248d5fdc45385e"
-  integrity sha512-AWuv6Ery3pM+dY7LYS8YIaCiQvUaos9OB1RyNgaOWnaX+Tik7Onvcsf8x8c+YtDeT0maYLniBip2hox5KtEXXA==
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/fastq/-/fastq-1.11.0.tgz#bb9fb955a07130a918eb63c1f5161cc32a5d0858"
+  integrity sha512-7Eczs8gIPDrVzT+EksYBcupqMyxSHXXrHOLRRxU2/DicV8789MRBRR8+Hc2uWzUupOs4YS4JzBmBxjjCVBxD/g==
   dependencies:
     reusify "^1.0.4"
 
@@ -4012,9 +4012,9 @@ jsii-diff@^1.16.0:
     yargs "^16.2.0"
 
 jsii-docgen@^1.5.5:
-  version "1.8.53"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-1.8.53.tgz#a11bdf571630c1f9cb32033dcfa1a0ada2c97842"
-  integrity sha512-28eCUn6tos9nvicVyIjWqPx5S4/lFviW/thDIINb9PoqxdRguXhZuyPl9TpZY0SpQeey+VShWDC9n613D8PJhA==
+  version "1.8.54"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-1.8.54.tgz#110e2e62d56921face2f6efc37440280363cc946"
+  integrity sha512-HYBjuuUqs4fkcC1xVJ3DWOvH7jkxd/PWa+caCJNzpLuX1PX/sScdKw1fKNBPCVbOuwkirq0AcjcmnQySXX22qA==
   dependencies:
     "@jsii/spec" "^1.16.0"
     fs-extra "^9.0.1"
@@ -5031,10 +5031,10 @@ progress@^2.0.0:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.16.12:
-  version "0.16.12"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.16.12.tgz#ba7363c5e56230741840b624045cc7f5856fea69"
-  integrity sha512-5AjUazBb9EXTkAi66w9Z9qhMLwP9hKPUJ3dIlpyFpMXIJE5io75UkRMLdZ2ExoDKg4+M+5k2F1V2hRwgYHb1hQ==
+projen@^0.16.15:
+  version "0.16.15"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.16.15.tgz#ab75bd28e6b40f58ddd33448b95984798230783d"
+  integrity sha512-CKHIsGETPKuy6olIMsPiZaKDiRlkLqYQ7Ubs+22y+Zf0ZjbyK3imzYKjHkVXNHn3GPf4xPZdGPyjEs3F8ho5Xg==
   dependencies:
     "@iarna/toml" "^2.2.5"
     chalk "^4.1.0"
@@ -5391,9 +5391,9 @@ run-parallel@^1.1.9:
     queue-microtask "^1.2.2"
 
 rxjs@^6.6.0:
-  version "6.6.3"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.6.3.tgz#8ca84635c4daa900c0d3967a6ee7ac60271ee552"
-  integrity sha512-trsQc+xYYXZ3urjOiJOuCOa5N3jAZ3eiSpQB5hIT8zGlL2QfnHLJ2r7GMkBGuIausdJN1OneaI6gQlsqNHHmZQ==
+  version "6.6.6"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.6.6.tgz#14d8417aa5a07c5e633995b525e1e3c0dec03b70"
+  integrity sha512-/oTwee4N4iWzAMAL9xdGKjkEHmIwupR3oXbQjCKywF1BeFohswF3vZdogbmEF6pZkOsXTzWkrZszrWpQTByYVg==
   dependencies:
     tslib "^1.9.0"
 
