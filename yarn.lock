@@ -1008,9 +1008,9 @@
   integrity sha512-f5j5b/Gf71L+dbqxIpQ4Z2WlmI/mPJ0fOkGGmFgtb6sAu97EPczzbS3/tJKxmcYDj55OX6ssqwDAWOHIYDRDGA==
 
 "@types/prettier@^2.0.0":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.2.1.tgz#374e31645d58cb18a07b3ecd8e9dede4deb2cccd"
-  integrity sha512-DxZZbyMAM9GWEzXL+BMZROWz9oo6A9EilwwOMET2UVu2uZTqMWS5S69KVtuVKaRjCUpcrOXRalet86/OpG4kqw==
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.2.2.tgz#e2280c89ddcbeef340099d6968d8c86ba155fdf6"
+  integrity sha512-i99hy7Ki19EqVOl77WplDrvgNugHnsSjECVR/wUrzw2TJXz1zlUfT2ngGckR6xN7yFYaijsMAqPkOLx9HgUqHg==
 
 "@types/stack-utils@^2.0.0":
   version "2.0.0"
@@ -1551,9 +1551,9 @@ camelcase@^6.0.0, camelcase@^6.2.0:
   integrity sha512-c7wVvbw3f37nuobQNtgsgG9POC9qMbNuMQmTCqZv23b6MIz0fcYpBiOlv9gEN/hdLdnZTDQhg6e9Dq5M1vKvfg==
 
 caniuse-lite@^1.0.30001181:
-  version "1.0.30001192"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001192.tgz#b848ebc0ab230cf313d194a4775a30155d50ae40"
-  integrity sha512-63OrUnwJj5T1rUmoyqYTdRWBqFFxZFlyZnRRjDR8NSUQFB6A+j/uBORU/SyJ5WzDLg4SPiZH40hQCBNdZ/jmAw==
+  version "1.0.30001194"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001194.tgz#3d16ff3d734a5a7d9818402c28b1f636c5be5bed"
+  integrity sha512-iDUOH+oFeBYk5XawYsPtsx/8fFpndAPUQJC7gBTfxHM8xw5nOZv7ceAD4frS1MKCLUac7QL5wdAJiFQlDRjXlA==
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -1766,9 +1766,9 @@ concat-stream@^2.0.0:
     typedarray "^0.0.6"
 
 constructs@^3.2.0:
-  version "3.3.47"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.3.47.tgz#b649b8f56a73f74d33df693cf59542ff8eb99480"
-  integrity sha512-xpR+W08OntZ2F5TptNazRmF1YXCApHcuJAsJPF8vIP73cXUdEn65gTGLt0FUhmsZ11F7hclyP+zpEFLn0LnveQ==
+  version "3.3.49"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.3.49.tgz#7055cd71dc80c97b80c7ef644c01159b3d0dd966"
+  integrity sha512-uGxdFyfTDqekz43ek5G/4lfeBPlbse1QV311OXQ5CFrwYHrITW5fGiAtLwQBfRc4VS7WXNu58D32Dv4JxV56lA==
 
 contains-path@^0.1.0:
   version "0.1.0"
@@ -2238,9 +2238,9 @@ ecc-jsbn@~0.1.1:
     safer-buffer "^2.1.0"
 
 electron-to-chromium@^1.3.649:
-  version "1.3.676"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.676.tgz#18b2336239b6cdc68c57ce96bf73daf80bab9eba"
-  integrity sha512-t0eEgYCP+XEbH/KwxWYZDY0XKwzmokDAsjFJ2rBstp2XuwuBCUZ+ni5qXI6XDRNkvDpVJcAOp2aJxkSkshKkmw==
+  version "1.3.678"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.678.tgz#c7c6960463167126b7ed076fade14cac6223bfff"
+  integrity sha512-E5ha1pE9+aWWrT2fUD5wdPBWUnYtKnEnloewbtVyrkAs79HvodOiNO4rMR94+hKbxgMFQG4fnPQACOc1cfMfBg==
 
 emittery@^0.7.1:
   version "0.7.2"
@@ -4018,9 +4018,9 @@ jsii-diff@^1.16.0:
     yargs "^16.2.0"
 
 jsii-docgen@^1.5.5:
-  version "1.8.59"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-1.8.59.tgz#9270ef7fb9040af388178427e341cc785aac5c69"
-  integrity sha512-+5lAXUHVZ7wLdVVPN4K1O4dJHq86sy0S48jmkhSvTMiHGf1LJkwVeTGj59T4iUg8Gks67R8Hj8ws4BfYL4/BbA==
+  version "1.8.60"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-1.8.60.tgz#5a6d1628ebf63cc0786eda934a5fb59cc3c207cf"
+  integrity sha512-afNkLMt/P9PDZ9UpkwYwqf/EzoWb3x8jUcOrNVP/aU0THE8Si1xqStwPiBq63UnqmA0dDkKz3SnKE2y6DIgapQ==
   dependencies:
     "@jsii/spec" "^1.16.0"
     fs-extra "^9.0.1"
@@ -5037,10 +5037,10 @@ progress@^2.0.0:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.16.24:
-  version "0.16.24"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.16.24.tgz#4909f09c022125ac4a640263b28a3a8046359396"
-  integrity sha512-Jop/ldtK23dmj4Ub0ykcTN1EwcZlnIYrCSOFlFixRZyuvcLe2PhoorLRPbBs/gMgKEVpnrXPVmxKh8YfUDdpow==
+projen@^0.16.29:
+  version "0.16.29"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.16.29.tgz#f185218ca9c934de74497fd64bb8e40212ec0ccf"
+  integrity sha512-HlvOwWkhjN+X0aGgYArGPk4bS2NFx1+177ppy5W5PLRzNhbCExCQJDEwBqDXg1k8gXRRdO8EQZ3ok/Xk0jwWiQ==
   dependencies:
     "@iarna/toml" "^2.2.5"
     chalk "^4.1.0"
