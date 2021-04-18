@@ -4691,9 +4691,9 @@ object-copy@^0.1.0:
     kind-of "^3.0.3"
 
 object-inspect@^1.9.0:
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.9.0.tgz#c90521d74e1127b67266ded3394ad6116986533a"
-  integrity sha512-i3Bp9iTqwhaLZBxGkRfo5ZbE07BQRT7MGu8+nNgwW9ItGp1TzCTw2DLEoWwjClxBjOFI/hWljTAmYGCEwmtnOw==
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.10.2.tgz#b6385a3e2b7cae0b5eafcf90cddf85d128767f30"
+  integrity sha512-gz58rdPpadwztRrPjZE9DZLOABUpTGdcANUgOwBFO1C+HZZhePoP83M65WGDmbpwFYJSWqavbl4SgDn4k8RYTA==
 
 object-is@^1.1.4:
   version "1.1.5"
@@ -5059,10 +5059,10 @@ progress@^2.0.0:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.17.44:
-  version "0.17.44"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.17.44.tgz#b1917ac8a5116d4a59dbfbf3b787a82530dc02b4"
-  integrity sha512-8nFtkzRF4rPzZXVcSEbNxbz7H4fVfqe9dKN7tCx1bVeIbNbCosNAhpXOUfDyeqZs8pHMN9wfxLf7uAPHdU7kRw==
+projen@^0.17.47:
+  version "0.17.47"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.17.47.tgz#fdf062f2aa57bcd60acbecd74e895f09606d224e"
+  integrity sha512-kdfIITs6kmAncVWkQTcqPmplxQdQiAP14MsM87jtWbbBtJ/riEH/K7wiQzmoGtqLKIuGdapAipGu6MKGCLN+sQ==
   dependencies:
     "@iarna/toml" "^2.2.5"
     chalk "^4.1.0"
