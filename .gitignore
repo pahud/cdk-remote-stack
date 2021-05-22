@@ -39,8 +39,8 @@ yarn-error.log*
 !/.gitattributes
 !/.github/pull_request_template.md
 !/.github/workflows/build.yml
-!/.github/workflows/projenyarnupgrade.yml
 !/.github/workflows/release.yml
+!/.github/workflows/upgrade-dependencies.yml
 !/.mergify.yml
 !/.npmignore
 !/.projen/deps.json
