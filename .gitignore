@@ -12,7 +12,6 @@
 .nyc_output
 .yarn-integrity
 /.changelog.tmp.md
-/.version.tmp.json
 /coverage
 /dist
 /lib
@@ -38,6 +37,7 @@ yarn-error.log*
 !/.eslintrc.json
 !/.gitattributes
 !/.github/pull_request_template.md
+!/.github/workflows/auto-approve.yml
 !/.github/workflows/build.yml
 !/.github/workflows/release.yml
 !/.github/workflows/upgrade-dependencies.yml
@@ -46,7 +46,6 @@ yarn-error.log*
 !/.projen/deps.json
 !/.projen/tasks.json
 !/.projenrc.js
-!/.versionrc.json
 !/API.md
 !/LICENSE
 !/package.json
