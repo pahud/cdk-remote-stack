@@ -74,7 +74,6 @@
     },
     {
       "name": "projen",
-      "version": "^0.22.8",
       "type": "build"
     },
     {
@@ -106,6 +105,11 @@
       "type": "peer"
     },
     {
+      "name": "@aws-cdk/aws-ssm",
+      "version": "^1.77.0",
+      "type": "peer"
+    },
+    {
       "name": "@aws-cdk/core",
       "version": "^1.77.0",
       "type": "peer"
@@ -132,6 +136,11 @@
     },
     {
       "name": "@aws-cdk/aws-logs",
+      "version": "^1.77.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-ssm",
       "version": "^1.77.0",
       "type": "runtime"
     },

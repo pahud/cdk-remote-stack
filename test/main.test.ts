@@ -1,5 +1,5 @@
 import * as cdk from '@aws-cdk/core';
-import { StackOutputs } from '../src';
+import { RemoteOutputs } from '../src';
 import '@aws-cdk/assert/jest';
 
 test('create the ServerlessAPI', () => {
@@ -24,9 +24,9 @@ test('create the ServerlessAPI', () => {
   const stackUS = new cdk.Stack(app, 'demo-stack-us', { env: envUS });
 
   // get the stackJP stack outputs from stackUS
-  const outputs = new StackOutputs(stackUS, 'Outputs', { stack: stackJP });
+  const outputs = new RemoteOutputs(stackUS, 'Outputs', { stack: stackJP });
 
-  const remoteOutputValue = outputs.getAttString('TopicName');
+  const remoteOutputValue = outputs.get('TopicName');
 
   // the value should be exactly the same with the output value of `TopicName`
   new cdk.CfnOutput(stackUS, 'RemoteTopicName', { value: remoteOutputValue });
