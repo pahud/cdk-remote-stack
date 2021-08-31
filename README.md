@@ -1,7 +1,7 @@
 [![awscdk-jsii-template](https://img.shields.io/badge/built%20with-awscdk--jsii--template-blue)](https://github.com/pahud/awscdk-jsii-template)
 [![NPM version](https://badge.fury.io/js/cdk-remote-stack.svg)](https://badge.fury.io/js/cdk-remote-stack)
 [![PyPI version](https://badge.fury.io/py/cdk-remote-stack.svg)](https://badge.fury.io/py/cdk-remote-stack)
-![Release](https://github.com/pahud/cdk-remote-stack/workflows/Release/badge.svg)
+[![Build](https://github.com/pahud/cdk-remote-stack/actions/workflows/build.yml/badge.svg)](https://github.com/pahud/cdk-remote-stack/actions/workflows/build.yml)
 
 # cdk-remote-stack
 Get outputs from cross-regional AWS CDK stacks
@@ -67,7 +67,7 @@ At this moment, `RemoteOutputs` only supports cross-regional reference in a sing
 
 ## always get the latest stack output
 
-By default, the `RemoteOutputs` construct will always try to get the latest output from the source stack, you may opt out by setting `alwaysUpdate` to `false` to turn this feature off.
+By default, the `RemoteOutputs` construct will always try to get the latest output from the source stack. You may opt out by setting `alwaysUpdate` to `false` to turn this feature off.
 
 For example:
 
@@ -210,7 +210,7 @@ new RemoteParameters(stackUS, 'Parameters', {
 })
 
 // for StackJP
-new RemoteParameters(stackUS, 'Parameters', {
+new RemoteParameters(stackJP, 'Parameters', {
   path: parameterPath,
   region: 'eu-central-1'
   // assume this role for cross-account parameters
