@@ -16,13 +16,25 @@ Object {
     "RemoteTopicName": Object {
       "Value": Object {
         "Fn::GetAtt": Array [
-          "OutputsStackOutputs304E877D",
+          "OutputsRemoteOutputs3D146D89",
           "TopicName",
         ],
       },
     },
   },
   "Parameters": Object {
+    "AssetParameters3803df2f6849acf50bb6577ee095a669940670e799f70a2be34893a399777bc3ArtifactHash719A647F": Object {
+      "Description": "Artifact hash for asset \\"3803df2f6849acf50bb6577ee095a669940670e799f70a2be34893a399777bc3\\"",
+      "Type": "String",
+    },
+    "AssetParameters3803df2f6849acf50bb6577ee095a669940670e799f70a2be34893a399777bc3S3BucketD1806169": Object {
+      "Description": "S3 bucket for asset \\"3803df2f6849acf50bb6577ee095a669940670e799f70a2be34893a399777bc3\\"",
+      "Type": "String",
+    },
+    "AssetParameters3803df2f6849acf50bb6577ee095a669940670e799f70a2be34893a399777bc3S3VersionKey840FE152": Object {
+      "Description": "S3 key for asset version \\"3803df2f6849acf50bb6577ee095a669940670e799f70a2be34893a399777bc3\\"",
+      "Type": "String",
+    },
     "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24ArtifactHashBA91B77F": Object {
       "Description": "Artifact hash for asset \\"67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24\\"",
       "Type": "String",
@@ -45,18 +57,6 @@ Object {
     },
     "AssetParametersc691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49cS3VersionKeyDD9AE9E7": Object {
       "Description": "S3 key for asset version \\"c691172cdeefa2c91b5a2907f9d81118e47597634943344795f1a844192dd49c\\"",
-      "Type": "String",
-    },
-    "AssetParametersf670d054a68af5688e2e03152c9e3e49b0523cf459462779d80b59c1e04b67a6ArtifactHash09DD926F": Object {
-      "Description": "Artifact hash for asset \\"f670d054a68af5688e2e03152c9e3e49b0523cf459462779d80b59c1e04b67a6\\"",
-      "Type": "String",
-    },
-    "AssetParametersf670d054a68af5688e2e03152c9e3e49b0523cf459462779d80b59c1e04b67a6S3Bucket33BAB0E8": Object {
-      "Description": "S3 bucket for asset \\"f670d054a68af5688e2e03152c9e3e49b0523cf459462779d80b59c1e04b67a6\\"",
-      "Type": "String",
-    },
-    "AssetParametersf670d054a68af5688e2e03152c9e3e49b0523cf459462779d80b59c1e04b67a6S3VersionKey53DA2315": Object {
-      "Description": "S3 key for asset version \\"f670d054a68af5688e2e03152c9e3e49b0523cf459462779d80b59c1e04b67a6\\"",
       "Type": "String",
     },
   },
@@ -179,7 +179,7 @@ Object {
       "Properties": Object {
         "Code": Object {
           "S3Bucket": Object {
-            "Ref": "AssetParametersf670d054a68af5688e2e03152c9e3e49b0523cf459462779d80b59c1e04b67a6S3Bucket33BAB0E8",
+            "Ref": "AssetParameters3803df2f6849acf50bb6577ee095a669940670e799f70a2be34893a399777bc3S3BucketD1806169",
           },
           "S3Key": Object {
             "Fn::Join": Array [
@@ -192,7 +192,7 @@ Object {
                       "Fn::Split": Array [
                         "||",
                         Object {
-                          "Ref": "AssetParametersf670d054a68af5688e2e03152c9e3e49b0523cf459462779d80b59c1e04b67a6S3VersionKey53DA2315",
+                          "Ref": "AssetParameters3803df2f6849acf50bb6577ee095a669940670e799f70a2be34893a399777bc3S3VersionKey840FE152",
                         },
                       ],
                     },
@@ -205,7 +205,7 @@ Object {
                       "Fn::Split": Array [
                         "||",
                         Object {
-                          "Ref": "AssetParametersf670d054a68af5688e2e03152c9e3e49b0523cf459462779d80b59c1e04b67a6S3VersionKey53DA2315",
+                          "Ref": "AssetParameters3803df2f6849acf50bb6577ee095a669940670e799f70a2be34893a399777bc3S3VersionKey840FE152",
                         },
                       ],
                     },
@@ -215,7 +215,7 @@ Object {
             ],
           },
         },
-        "Handler": "index.on_event",
+        "Handler": "remote-outputs.on_event",
         "Role": Object {
           "Fn::GetAtt": Array [
             "OutputsMyHandlerServiceRole597B9B61",
@@ -425,7 +425,7 @@ Object {
       },
       "Type": "AWS::IAM::Policy",
     },
-    "OutputsStackOutputs304E877D": Object {
+    "OutputsRemoteOutputs3D146D89": Object {
       "DeletionPolicy": "Delete",
       "Properties": Object {
         "ServiceToken": Object {

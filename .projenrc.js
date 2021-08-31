@@ -40,6 +40,7 @@ const project = new AwsCdkConstructLibrary({
     '@aws-cdk/aws-iam',
     '@aws-cdk/aws-lambda',
     '@aws-cdk/aws-logs',
+    '@aws-cdk/aws-ssm',
     '@aws-cdk/custom-resources',
   ],
 
@@ -50,7 +51,7 @@ const project = new AwsCdkConstructLibrary({
 });
 
 
-const common_exclude = ['cdk.out', 'cdk.context.json', 'images', 'yarn-error.log'];
+const common_exclude = ['cdk.out', 'cdk.context.json', 'yarn-error.log'];
 project.npmignore.exclude(...common_exclude);
 project.gitignore.exclude(...common_exclude);
 

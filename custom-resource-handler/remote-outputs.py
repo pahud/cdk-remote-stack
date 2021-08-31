@@ -1,4 +1,8 @@
-import boto3, json
+#!/usr/bin/env python3
+
+import boto3
+import json
+
 
 def on_event(event, context):
     print(event)
@@ -10,6 +14,7 @@ def on_event(event, context):
     if request_type == "Delete":
         return on_delete(event)
     raise Exception("Invalid request type: %s" % request_type)
+
 
 def on_create(event):
     props = event["ResourceProperties"]
@@ -28,6 +33,7 @@ def on_create(event):
     # add your create code here...
     physical_id = stack_name
     return {"PhysicalResourceId": physical_id, "Data": output}
+
 
 def on_update(event):
     physical_id = event["PhysicalResourceId"]
@@ -48,6 +54,7 @@ def on_update(event):
     # add your create code here...
     physical_id = stack_name
     return {"PhysicalResourceId": physical_id, "Data": output}
+
 
 def on_delete(event):
     physical_id = event["PhysicalResourceId"]
