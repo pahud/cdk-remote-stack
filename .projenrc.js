@@ -45,13 +45,12 @@ const project = new AwsCdkConstructLibrary({
     '@aws-cdk/aws-ssm',
     '@aws-cdk/custom-resources',
   ],
-
+  minNodeVersion: '12.20.0',
   python: {
     distName: 'cdk-remote-stack',
     module: 'cdk_remote_stack',
   },
 });
-
 
 const common_exclude = ['cdk.out', 'cdk.context.json', 'yarn-error.log'];
 project.npmignore.exclude(...common_exclude);
