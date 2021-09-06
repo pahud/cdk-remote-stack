@@ -19,6 +19,7 @@ const project = new AwsCdkConstructLibrary({
     'cross-stack',
     'cross-account',
   ],
+  minNodeVersion: '12.20.0',
   depsUpgrade: DependenciesUpgradeMechanism.githubWorkflow({
     ignoreProjen: false,
     workflowOptions: {
