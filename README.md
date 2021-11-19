@@ -222,5 +222,9 @@ You will need to install and bootstrap your target accounts with AWS CDK 1.108.0
 1. At this moment, the `RemoteParameters` construct only supports the `String` data type from parameter store.
 2. Maximum number of parameters is `100`. Will make it configurable in the future if required.
 
+# Contributing
+
+See [CONTRIBUTING](CONTRIBUTING.md) for more information.
+
 # License
 This code is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file.
