@@ -1,19 +1,19 @@
 [![awscdk-jsii-template](https://img.shields.io/badge/built%20with-awscdk--jsii--template-blue)](https://github.com/pahud/awscdk-jsii-template)
-[![NPM version](https://badge.fury.io/js/cdk-remote-stack.svg)](https://badge.fury.io/js/cdk-remote-stack)
+[![npm version](https://badge.fury.io/js/cdk-remote-stack.svg)](https://badge.fury.io/js/cdk-remote-stack)
 [![PyPI version](https://badge.fury.io/py/cdk-remote-stack.svg)](https://badge.fury.io/py/cdk-remote-stack)
 [![Build](https://github.com/pahud/cdk-remote-stack/actions/workflows/build.yml/badge.svg)](https://github.com/pahud/cdk-remote-stack/actions/workflows/build.yml)
 
 # cdk-remote-stack
-Get outputs from cross-regional AWS CDK stacks
+
+Get outputs from cross-region AWS CloudFormation stacks
 
 # Why
 
-AWS CDK cross-regional cross-stack reference is not easy with the native AWS CDK construct library.
+Setting up cross-regional cross-stack references requires using multiple constructs from the AWS CDK construct library and is not straightforward.
 
-`cdk-remote-stack` aims to simplify the cross-regional cross-stack reference to help you easily build cross-regional multi-stack AWS CDK apps.
+`cdk-remote-stack` aims to simplify the cross-regional cross-stack references to help you easily build cross-regional multi-stack AWS CDK applications.
 
-This construct library provides two major constructs:
-
+This construct library provides two main constructs:
 - **RemoteOutputs** - cross regional stack outputs reference.
 - **RemoteParameters** - cross regional/account SSM parameters reference.
 
@@ -21,11 +21,10 @@ This construct library provides two major constructs:
 
 `RemoteOutputs` is ideal for one stack referencing the outputs from another across different AWS regions.
 
-Let's say we have two cross-regional CDK stacks in the same cdk app:
+Let's say we have two cross-regional stacks in the same AWS CDK application:
 
-1. **stackJP** - cdk stack in `JP` to create a SNS topic
-2. **stackUS** - cdk stack in `US` to get the Outputs from `stackJP` and print out the SNS `TopicName` from `stackJP` Outputs.
-
+1. **stackJP** - stack in Japan (`JP`) to create a SNS topic
+2. **stackUS** - stack in United States (`US`) to get the outputs from `stackJP` and print out the SNS `TopicName` from `stackJP` outputs.
 
 ```ts
 import { RemoteOutputs } from 'cdk-remote-stack';
@@ -65,12 +64,11 @@ new cdk.CfnOutput(stackUS, 'RemoteTopicName', { value: remoteOutputValue })
 
 At this moment, `RemoteOutputs` only supports cross-regional reference in a single AWS account.
 
-## always get the latest stack output
+## Always get the latest stack output
 
 By default, the `RemoteOutputs` construct will always try to get the latest output from the source stack. You may opt out by setting `alwaysUpdate` to `false` to turn this feature off.
 
 For example:
-
 ```ts
 const outputs = new RemoteOutputs(stackUS, 'Outputs', { 
   stack: stackJP,
@@ -80,16 +78,15 @@ const outputs = new RemoteOutputs(stackUS, 'Outputs', {
 
 # RemoteParameters
 
-AWS [SSM Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html) is great to store and persist parameters and allow stacks from other regons/accounts to reference. Let's dive into the two major scenarios below:
+[AWS Systems Manager (AWS SSM) Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html) is great to store and persist parameters and allow stacks from other regons/accounts to reference. Let's dive into the two major scenarios below:
 
 ## #1 - Stacks from single account and different regions
 
-In this sample, we create two stacks from JP(`ap-northeast-1`) and US(`us-west-2`). The JP stack will produce and update parameters in its parameter store, while the US stack will consume the parameters across differnt regions with the `RemoteParameters` construct.
+In this sample, we create two stacks from JP (`ap-northeast-1`) and US (`us-west-2`). The JP stack will produce and update parameters in its parameter store, while the US stack will consume the parameters across differnt regions with the `RemoteParameters` construct.
 
 ![](images/remote-param-1.svg)
 
 ```ts
-
     const envJP = { region: 'ap-northeast-1', account: '111111111111' };
     const envUS = { region: 'us-west-2', account: '111111111111' };
 
@@ -117,7 +114,7 @@ In this sample, we create two stacks from JP(`ap-northeast-1`) and US(`us-west-2
     // ensure the dependency
     stackUS.addDependency(stackJP);
 
-    // get remote parameters by path from SSM parameter store
+    // get remote parameters by path from AWS SSM parameter store
     const parameters = new RemoteParameters(stackUS, 'Parameters', {
       path: parameterPath,
       region: stackJP.region,
@@ -134,7 +131,7 @@ In this sample, we create two stacks from JP(`ap-northeast-1`) and US(`us-west-2
 
 ## #2 - Stacks from differnt accounts and different regions
 
-Similar to the case above, now we are running seperate stacks in seperate account/region.  We will need to pass a `role` to the `RemoteParameters` construct to get all the parameters from remote.
+Similar to the use case above, but now we deploy stacks in separate accounts and regions.  We will need to pass an AWS Identity and Access Management (AWS IAM) `role` to the `RemoteParameters` construct to get all the parameters from the remote environment.
 
 ![](images/remote-param-2.svg)
 
@@ -161,7 +158,7 @@ Similar to the case above, now we are running seperate stacks in seperate accoun
       stringValue: 'bar3',
     });
 
-    // allow US account to assume this readonly role to get parameters
+    // allow US account to assume this read only role to get parameters
     const cdkReadOnlyRole = new iam.Role(stackJP, 'readOnlyRole', {
       assumedBy: new iam.AccountPrincipal(envUS.account),
       roleName: PhysicalName.GENERATE_IF_NEEDED,
@@ -174,7 +171,7 @@ Similar to the case above, now we are running seperate stacks in seperate accoun
     // ensure the dependency
     stackUS.addDependency(stackJP);
 
-    // get remote parameters by path from SSM parameter store
+    // get remote parameters by path from AWS SSM parameter store
     const parameters = new RemoteParameters(stackUS, 'Parameters', {
       path: parameterPath,
       region: stackJP.region,
@@ -191,11 +188,11 @@ Similar to the case above, now we are running seperate stacks in seperate accoun
     new cdk.CfnOutput(stackUS, 'foo3Output', { value: foo3 });
 ```
 
-## #3 - dedicated account for a centralized parameter store
+## #3 - Dedicated account for a centralized parameter store
 
-The parameters are stored in a centralized account/region and previously provisioned as a state-of-truth configuration store. All other stacks from different account/region are consuming the parameters from remote.
+The parameters are stored in a centralized account/region and previously provisioned as a source-of-truth configuration store. All other stacks from different accounts/regions are consuming the parameters from the central configuration store.
 
-This scenario is pretty much like #2. The difference is that there's a dedicated account for centralized parameter store being shared across all other accounts. 
+This scenario is pretty much like #2. The difference is that there's a dedicated account for centralized configuration store being shared with all other accounts. 
 
 ![](images/remote-param-3.svg)
 
@@ -219,9 +216,11 @@ new RemoteParameters(stackJP, 'Parameters', {
 ```
 
 ## Tools for multi-account deployment
+You will need to install and bootstrap your target accounts with AWS CDK 1.108.0 or later, so you can deploy stacks from different accounts. It [adds support](https://github.com/aws/aws-cdk/pull/14874) for cross-account lookups. Alternatively, install [cdk-assume-role-credential-plugin](https://github.com/aws-samples/cdk-assume-role-credential-plugin). Read this [blog post](https://aws.amazon.com/tw/blogs/devops/cdk-credential-plugin/) to setup this plugin.
 
-You will need to install [cdk-assume-role-credential-plugin](https://github.com/aws-samples/cdk-assume-role-credential-plugin) so you can deploy stacks from different accounts. Read this [blog post](https://aws.amazon.com/tw/blogs/devops/cdk-credential-plugin/) to setup this plugin.
+## Limitations
+1. At this moment, the `RemoteParameters` construct only supports the `String` data type from parameter store.
+2. Maximum number of parameters is `100`. Will make it configurable in the future if required.
 
-## Limitation
-1. At this moment, the `RemoteParameters` construct only support the `String` data type from parameter store.
-2. Max number of parameters is `100`. Will make it configurable in the future PR when required.
+# License
+This code is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file.
