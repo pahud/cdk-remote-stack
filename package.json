@@ -1,6 +1,6 @@
 {
   "name": "cdk-remote-stack",
-  "description": "Get outputs and parameters from remote CDK stacks",
+  "description": "Get outputs from cross-region AWS CloudFormation stacks",
   "repository": {
     "type": "git",
     "url": "https://github.com/pahud/cdk-remote-stack.git"
