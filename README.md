@@ -79,7 +79,7 @@ const outputs = new RemoteOutputs(stackUS, 'Outputs', {
 
 [AWS Systems Manager (AWS SSM) Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html) is great to store and persist parameters and allow stacks from other regons/accounts to reference. Let's dive into the two major scenarios below:
 
-## #1 - Stacks from single account and different regions
+## Stacks from single account and different regions
 
 In this sample, we create two stacks from JP (`ap-northeast-1`) and US (`us-west-2`). The JP stack will produce and update parameters in its parameter store, while the US stack will consume the parameters across differnt regions with the `RemoteParameters` construct.
 
@@ -128,7 +128,7 @@ In this sample, we create two stacks from JP (`ap-northeast-1`) and US (`us-west
     new cdk.CfnOutput(stackUS, 'foo3Output', { value: foo3 });
 ```
 
-## #2 - Stacks from differnt accounts and different regions
+## Stacks from differnt accounts and different regions
 
 Similar to the use case above, but now we deploy stacks in separate accounts and regions.  We will need to pass an AWS Identity and Access Management (AWS IAM) `role` to the `RemoteParameters` construct to get all the parameters from the remote environment.
 
@@ -187,7 +187,7 @@ Similar to the use case above, but now we deploy stacks in separate accounts and
     new cdk.CfnOutput(stackUS, 'foo3Output', { value: foo3 });
 ```
 
-## #3 - Dedicated account for a centralized parameter store
+## Dedicated account for a centralized parameter store
 
 The parameters are stored in a centralized account/region and previously provisioned as a source-of-truth configuration store. All other stacks from different accounts/regions are consuming the parameters from the central configuration store.
 
