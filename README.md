@@ -5,7 +5,7 @@
 
 # cdk-remote-stack
 
-Get outputs from cross-region AWS CloudFormation stacks
+Get outputs and AWS SSM parameters from cross-region AWS CloudFormation stacks
 
 # Why
 
