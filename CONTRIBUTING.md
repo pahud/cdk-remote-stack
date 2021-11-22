@@ -45,7 +45,7 @@ Looking at the existing issues is a great way to find something to contribute on
 
 
 ## Security issue notifications
-If you discover a potential security issue in this project, please reach out to us via the authoer email in [package.json](./package.json). Please do **not** create a public github issue.
+If you discover a potential security issue in this project, please reach out to us via the author email in [package.json](./package.json). Please do **not** create a public github issue.
 
 
 ## Licensing
