@@ -1,4 +1,3 @@
-[![awscdk-jsii-template](https://img.shields.io/badge/built%20with-awscdk--jsii--template-blue)](https://github.com/pahud/awscdk-jsii-template)
 [![npm version](https://badge.fury.io/js/cdk-remote-stack.svg)](https://badge.fury.io/js/cdk-remote-stack)
 [![PyPI version](https://badge.fury.io/py/cdk-remote-stack.svg)](https://badge.fury.io/py/cdk-remote-stack)
 [![Build](https://github.com/pahud/cdk-remote-stack/actions/workflows/build.yml/badge.svg)](https://github.com/pahud/cdk-remote-stack/actions/workflows/build.yml)
