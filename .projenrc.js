@@ -1,11 +1,11 @@
-const { AwsCdkConstructLibrary, DevEnvironmentDockerImage, Gitpod } = require('projen');
+const { awscdk, DevEnvironmentDockerImage, Gitpod } = require('projen');
 
 const AWS_CDK_LATEST_RELEASE = '1.77.0';
 const PROJECT_NAME = 'cdk-remote-stack';
 const PROJECT_DESCRIPTION = 'Get outputs and AWS SSM parameters from cross-region AWS CloudFormation stacks';
 const AUTOMATION_TOKEN = 'AUTOMATION_GITHUB_TOKEN';
 
-const project = new AwsCdkConstructLibrary({
+const project = new awscdk.AwsCdkConstructLibrary({
   authorName: 'Pahud Hsieh',
   authorEmail: 'pahudnet@gmail.com',
   name: PROJECT_NAME,
