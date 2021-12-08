@@ -1,6 +1,6 @@
 const { awscdk, DevEnvironmentDockerImage, Gitpod } = require('projen');
 
-const AWS_CDK_LATEST_RELEASE = '1.77.0';
+const AWS_CDK_LATEST_RELEASE = '2.1.0';
 const PROJECT_NAME = 'cdk-remote-stack';
 const PROJECT_DESCRIPTION = 'Get outputs and AWS SSM parameters from cross-region AWS CloudFormation stacks';
 const AUTOMATION_TOKEN = 'AUTOMATION_GITHUB_TOKEN';
@@ -36,14 +36,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
     announce: false,
   },
   cdkVersion: AWS_CDK_LATEST_RELEASE,
-  cdkDependencies: [
-    '@aws-cdk/core',
-    '@aws-cdk/aws-iam',
-    '@aws-cdk/aws-lambda',
-    '@aws-cdk/aws-logs',
-    '@aws-cdk/aws-ssm',
-    '@aws-cdk/custom-resources',
-  ],
+  cdkDependencies: ['aws-cdk-lib'],
+  deps: ['constructs'],
   python: {
     distName: 'cdk-remote-stack',
     module: 'cdk_remote_stack',

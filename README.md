@@ -27,9 +27,9 @@ Let's say we have two cross-regional stacks in the same AWS CDK application:
 
 ```ts
 import { RemoteOutputs } from 'cdk-remote-stack';
-import * as cdk from '@aws-cdk/core';
+import { App, CfnOutput, Stack } from 'aws-cdk-lib';
 
-const app = new cdk.App();
+const app = new App();
 
 const envJP = {
   region: 'ap-northeast-1',
@@ -42,12 +42,12 @@ const envUS = {
 };
 
 // first stack in JP
-const stackJP = new cdk.Stack(app, 'demo-stack-jp', { env: envJP })
+const stackJP = new Stack(app, 'demo-stack-jp', { env: envJP })
 
-new cdk.CfnOutput(stackJP, 'TopicName', { value: 'foo' })
+new CfnOutput(stackJP, 'TopicName', { value: 'foo' })
 
 // second stack in US
-const stackUS = new cdk.Stack(app, 'demo-stack-us', { env: envUS })
+const stackUS = new Stack(app, 'demo-stack-us', { env: envUS })
 
 // ensure the dependency
 stackUS.addDependency(stackJP)
@@ -58,7 +58,7 @@ const outputs = new RemoteOutputs(stackUS, 'Outputs', { stack: stackJP })
 const remoteOutputValue = outputs.get('TopicName')
 
 // the value should be exactly the same with the output value of `TopicName`
-new cdk.CfnOutput(stackUS, 'RemoteTopicName', { value: remoteOutputValue })
+new CfnOutput(stackUS, 'RemoteTopicName', { value: remoteOutputValue })
 ```
 
 At this moment, `RemoteOutputs` only supports cross-regional reference in a single AWS account.
@@ -91,24 +91,24 @@ In this sample, we create two stacks from JP (`ap-northeast-1`) and US (`us-west
 
     // first stack in JP
     const producerStackName = 'demo-stack-jp';
-    const stackJP = new cdk.Stack(app, producerStackName, { env: envJP });
+    const stackJP = new Stack(app, producerStackName, { env: envJP });
     const parameterPath = `/${envJP.account}/${envJP.region}/${producerStackName}`
 
-    new ssm.StringParameter(stackJP, 'foo1', {
+    new aws_ssm.StringParameter(stackJP, 'foo1', {
       parameterName: `${parameterPath}/foo1`,
       stringValue: 'bar1',
     });
-    new ssm.StringParameter(stackJP, 'foo2', {
+    new aws_ssm.StringParameter(stackJP, 'foo2', {
       parameterName: `${parameterPath}/foo2`,
       stringValue: 'bar2',
     });
-    new ssm.StringParameter(stackJP, 'foo3', {
+    new aws_ssm.StringParameter(stackJP, 'foo3', {
       parameterName: `${parameterPath}/foo3`,
       stringValue: 'bar3',
     });
 
     // second stack in US
-    const stackUS = new cdk.Stack(app, 'demo-stack-us', { env: envUS });
+    const stackUS = new Stack(app, 'demo-stack-us', { env: envUS });
 
     // ensure the dependency
     stackUS.addDependency(stackJP);
@@ -123,9 +123,9 @@ In this sample, we create two stacks from JP (`ap-northeast-1`) and US (`us-west
     const foo2 = parameters.get(`${parameterPath}/foo2`);
     const foo3 = parameters.get(`${parameterPath}/foo3`);
 
-    new cdk.CfnOutput(stackUS, 'foo1Output', { value: foo1 });
-    new cdk.CfnOutput(stackUS, 'foo2Output', { value: foo2 });
-    new cdk.CfnOutput(stackUS, 'foo3Output', { value: foo3 });
+    new CfnOutput(stackUS, 'foo1Output', { value: foo1 });
+    new CfnOutput(stackUS, 'foo2Output', { value: foo2 });
+    new CfnOutput(stackUS, 'foo3Output', { value: foo3 });
 ```
 
 ## Stacks from differnt accounts and different regions
@@ -141,31 +141,31 @@ Similar to the use case above, but now we deploy stacks in separate accounts and
 
     // first stack in JP
     const producerStackName = 'demo-stack-jp';
-    const stackJP = new cdk.Stack(app, producerStackName, { env: envJP });
+    const stackJP = new Stack(app, producerStackName, { env: envJP });
     const parameterPath = `/${envJP.account}/${envJP.region}/${producerStackName}`
 
-    new ssm.StringParameter(stackJP, 'foo1', {
+    new aws_ssm.StringParameter(stackJP, 'foo1', {
       parameterName: `${parameterPath}/foo1`,
       stringValue: 'bar1',
     });
-    new ssm.StringParameter(stackJP, 'foo2', {
+    new aws_ssm.StringParameter(stackJP, 'foo2', {
       parameterName: `${parameterPath}/foo2`,
       stringValue: 'bar2',
     });
-    new ssm.StringParameter(stackJP, 'foo3', {
+    new aws_ssm.StringParameter(stackJP, 'foo3', {
       parameterName: `${parameterPath}/foo3`,
       stringValue: 'bar3',
     });
 
     // allow US account to assume this read only role to get parameters
-    const cdkReadOnlyRole = new iam.Role(stackJP, 'readOnlyRole', {
+    const cdkReadOnlyRole = new aws_iam.Role(stackJP, 'readOnlyRole', {
       assumedBy: new iam.AccountPrincipal(envUS.account),
       roleName: PhysicalName.GENERATE_IF_NEEDED,
-      managedPolicies: [ iam.ManagedPolicy.fromAwsManagedPolicyName('AmazonSSMReadOnlyAccess')],
+      managedPolicies: [ aws_iam.ManagedPolicy.fromAwsManagedPolicyName('AmazonSSMReadOnlyAccess')],
     })
 
     // second stack in US
-    const stackUS = new cdk.Stack(app, 'demo-stack-us', { env: envUS });
+    const stackUS = new Stack(app, 'demo-stack-us', { env: envUS });
 
     // ensure the dependency
     stackUS.addDependency(stackJP);
@@ -175,16 +175,16 @@ Similar to the use case above, but now we deploy stacks in separate accounts and
       path: parameterPath,
       region: stackJP.region,
       // assume this role for cross-account parameters
-      role: iam.Role.fromRoleArn(stackUS, 'readOnlyRole', cdkReadOnlyRole.roleArn),
+      role: aws_iam.Role.fromRoleArn(stackUS, 'readOnlyRole', cdkReadOnlyRole.roleArn),
     })
 
     const foo1 = parameters.get(`${parameterPath}/foo1`);
     const foo2 = parameters.get(`${parameterPath}/foo2`);
     const foo3 = parameters.get(`${parameterPath}/foo3`);
 
-    new cdk.CfnOutput(stackUS, 'foo1Output', { value: foo1 });
-    new cdk.CfnOutput(stackUS, 'foo2Output', { value: foo2 });
-    new cdk.CfnOutput(stackUS, 'foo3Output', { value: foo3 });
+    new CfnOutput(stackUS, 'foo1Output', { value: foo1 });
+    new CfnOutput(stackUS, 'foo2Output', { value: foo2 });
+    new CfnOutput(stackUS, 'foo3Output', { value: foo3 });
 ```
 
 ## Dedicated account for a centralized parameter store
@@ -202,7 +202,7 @@ new RemoteParameters(stackUS, 'Parameters', {
   path: parameterPath,
   region: 'eu-central-1'
   // assume this role for cross-account parameters
-  role: iam.Role.fromRoleArn(stackUS, 'readOnlyRole', sharedReadOnlyRoleArn),
+  role: aws_iam.Role.fromRoleArn(stackUS, 'readOnlyRole', sharedReadOnlyRoleArn),
 })
 
 // for StackJP
@@ -210,7 +210,7 @@ new RemoteParameters(stackJP, 'Parameters', {
   path: parameterPath,
   region: 'eu-central-1'
   // assume this role for cross-account parameters
-  role: iam.Role.fromRoleArn(stackJP, 'readOnlyRole', sharedReadOnlyRoleArn),
+  role: aws_iam.Role.fromRoleArn(stackJP, 'readOnlyRole', sharedReadOnlyRoleArn),
 })
 ```
 
