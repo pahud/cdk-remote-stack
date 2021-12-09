@@ -21,8 +21,8 @@ Name|Description
 
 Represents the RemoteOutputs of the remote CDK stack.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
-__Extends__: [Construct](#aws-cdk-core-construct)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
+__Extends__: [Construct](#constructs-construct)
 
 ### Initializer
 
@@ -33,10 +33,10 @@ __Extends__: [Construct](#aws-cdk-core-construct)
 new RemoteOutputs(scope: Construct, id: string, props: RemoteOutputsProps)
 ```
 
-* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
 * **id** (<code>string</code>)  *No description*
 * **props** (<code>[RemoteOutputsProps](#cdk-remote-stack-remoteoutputsprops)</code>)  *No description*
-  * **stack** (<code>[Stack](#aws-cdk-core-stack)</code>)  The remote CDK stack to get the outputs from. 
+  * **stack** (<code>[Stack](#aws-cdk-lib-stack)</code>)  The remote CDK stack to get the outputs from. 
   * **alwaysUpdate** (<code>boolean</code>)  Indicate whether always update the custom resource to get the new stack output. __*Default*__: true
 
 
@@ -46,7 +46,7 @@ new RemoteOutputs(scope: Construct, id: string, props: RemoteOutputsProps)
 
 Name | Type | Description 
 -----|------|-------------
-**outputs** | <code>[CustomResource](#aws-cdk-core-customresource)</code> | The outputs from the remote stack.
+**outputs** | <code>[CustomResource](#aws-cdk-lib-customresource)</code> | The outputs from the remote stack.
 
 ### Methods
 
@@ -70,8 +70,8 @@ __Returns__:
 
 Represents the RemoteParameters of the remote CDK stack.
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
-__Extends__: [Construct](#aws-cdk-core-construct)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
+__Extends__: [Construct](#constructs-construct)
 
 ### Initializer
 
@@ -82,13 +82,13 @@ __Extends__: [Construct](#aws-cdk-core-construct)
 new RemoteParameters(scope: Construct, id: string, props: RemoteParametersProps)
 ```
 
-* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
 * **id** (<code>string</code>)  *No description*
 * **props** (<code>[RemoteParametersProps](#cdk-remote-stack-remoteparametersprops)</code>)  *No description*
   * **path** (<code>string</code>)  The parameter path. 
   * **region** (<code>string</code>)  The region code of the remote stack. 
   * **alwaysUpdate** (<code>boolean</code>)  Indicate whether always update the custom resource to get the new stack output. __*Default*__: true
-  * **role** (<code>[IRole](#aws-cdk-aws-iam-irole)</code>)  The assumed role used to get remote parameters. __*Optional*__
+  * **role** (<code>[aws_iam.IRole](#aws-cdk-lib-aws-iam-irole)</code>)  The assumed role used to get remote parameters. __*Optional*__
 
 
 
@@ -97,7 +97,7 @@ new RemoteParameters(scope: Construct, id: string, props: RemoteParametersProps)
 
 Name | Type | Description 
 -----|------|-------------
-**parameters** | <code>[CustomResource](#aws-cdk-core-customresource)</code> | The parameters in the SSM parameter store for the remote stack.
+**parameters** | <code>[CustomResource](#aws-cdk-lib-customresource)</code> | The parameters in the SSM parameter store for the remote stack.
 
 ### Methods
 
@@ -126,7 +126,7 @@ Properties of the RemoteOutputs.
 
 Name | Type | Description 
 -----|------|-------------
-**stack** | <code>[Stack](#aws-cdk-core-stack)</code> | The remote CDK stack to get the outputs from.
+**stack** | <code>[Stack](#aws-cdk-lib-stack)</code> | The remote CDK stack to get the outputs from.
 **alwaysUpdate**? | <code>boolean</code> | Indicate whether always update the custom resource to get the new stack output.<br/>__*Default*__: true
 
 
@@ -143,7 +143,7 @@ Name | Type | Description
 **path** | <code>string</code> | The parameter path.
 **region** | <code>string</code> | The region code of the remote stack.
 **alwaysUpdate**? | <code>boolean</code> | Indicate whether always update the custom resource to get the new stack output.<br/>__*Default*__: true
-**role**? | <code>[IRole](#aws-cdk-aws-iam-irole)</code> | The assumed role used to get remote parameters.<br/>__*Optional*__
+**role**? | <code>[aws_iam.IRole](#aws-cdk-lib-aws-iam-irole)</code> | The assumed role used to get remote parameters.<br/>__*Optional*__
 
 
 
