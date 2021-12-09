@@ -27,7 +27,7 @@ Let's say we have two cross-regional stacks in the same AWS CDK application:
 
 ```ts
 import { RemoteOutputs } from 'cdk-remote-stack';
-import * as cdk from '@aws-cdk/core';
+import * as cdk from 'aws-cdk-lib';
 
 const app = new cdk.App();
 

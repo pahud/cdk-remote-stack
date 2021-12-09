@@ -1,15 +1,17 @@
-import * as iam from '@aws-cdk/aws-iam';
-import * as ssm from '@aws-cdk/aws-ssm';
-import * as cdk from '@aws-cdk/core';
-import { PhysicalName } from '@aws-cdk/core';
+import {
+  Stack, App, PhysicalName, CfnOutput,
+  aws_iam as iam,
+  aws_ssm as ssm,
+} from 'aws-cdk-lib';
+
 import { RemoteParameters, RemoteOutputs } from './';
 
 export class IntegTesting {
-  readonly stack: cdk.Stack[];
+  readonly stack: Stack[];
 
   constructor() {
 
-    const app = new cdk.App();
+    const app = new App();
 
     const envJP = {
       region: 'ap-northeast-1',
@@ -22,12 +24,12 @@ export class IntegTesting {
     };
 
     // first stack in JP
-    const stackJP = new cdk.Stack(app, 'demo-stack-jp', { env: envJP });
+    const stackJP = new Stack(app, 'demo-stack-jp', { env: envJP });
 
-    new cdk.CfnOutput(stackJP, 'TopicName', { value: 'foo' });
+    new CfnOutput(stackJP, 'TopicName', { value: 'foo' });
 
     // second stack in US
-    const stackUS = new cdk.Stack(app, 'demo-stack-us', { env: envUS });
+    const stackUS = new Stack(app, 'demo-stack-us', { env: envUS });
 
     // ensure the dependency
     stackUS.addDependency(stackJP);
@@ -41,18 +43,18 @@ export class IntegTesting {
     const remoteOutputValue = outputs.get('TopicName');
 
     // the value should be exactly the same with the output value of `TopicName`
-    new cdk.CfnOutput(stackUS, 'RemoteTopicName', { value: remoteOutputValue });
+    new CfnOutput(stackUS, 'RemoteTopicName', { value: remoteOutputValue });
 
     this.stack = [stackJP, stackUS];
   }
 }
 
 export class IntegSsmParameters {
-  readonly stack: cdk.Stack[];
+  readonly stack: Stack[];
 
   constructor() {
 
-    const app = new cdk.App();
+    const app = new App();
 
     const envJP = {
       region: 'ap-northeast-1',
@@ -66,7 +68,7 @@ export class IntegSsmParameters {
 
     // first stack in JP
     const producerStackName = 'demo-stack-jp';
-    const stackJP = new cdk.Stack(app, producerStackName, { env: envJP });
+    const stackJP = new Stack(app, producerStackName, { env: envJP });
     const parameterPath = `/${envJP.account}/${envJP.region}/${producerStackName}`;
 
     new ssm.StringParameter(stackJP, 'foo1', {
@@ -91,7 +93,7 @@ export class IntegSsmParameters {
     });
 
     // second stack in US
-    const stackUS = new cdk.Stack(app, 'demo-stack-us', { env: envUS });
+    const stackUS = new Stack(app, 'demo-stack-us', { env: envUS });
 
     // ensure the dependency
     stackUS.addDependency(stackJP);
@@ -108,9 +110,9 @@ export class IntegSsmParameters {
     const foo2 = parameters.get(`${parameterPath}/foo2`);
     const foo3 = parameters.get(`${parameterPath}/foo3`);
 
-    new cdk.CfnOutput(stackUS, 'foo1Output', { value: foo1 });
-    new cdk.CfnOutput(stackUS, 'foo2Output', { value: foo2 });
-    new cdk.CfnOutput(stackUS, 'foo3Output', { value: foo3 });
+    new CfnOutput(stackUS, 'foo1Output', { value: foo1 });
+    new CfnOutput(stackUS, 'foo2Output', { value: foo2 });
+    new CfnOutput(stackUS, 'foo3Output', { value: foo3 });
 
     this.stack = [stackJP, stackUS];
   }
