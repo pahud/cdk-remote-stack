@@ -6,6 +6,20 @@
 
 Get outputs and AWS SSM parameters from cross-region AWS CloudFormation stacks
 
+# Install
+
+Use the npm dist tag to opt in CDKv1 or CDKv2:
+
+```sh
+// for CDKv2
+npm install cdk-remote-stack
+or
+npm install cdk-remote-stack@latest
+
+// for CDKv1
+npm install cdk-remote-stack@cdkv1 
+```
+
 # Why
 
 Setting up cross-regional cross-stack references requires using multiple constructs from the AWS CDK construct library and is not straightforward.
