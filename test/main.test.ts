@@ -1,6 +1,5 @@
 import * as cdk from 'aws-cdk-lib';
 import { RemoteOutputs } from '../src';
-import '@aws-cdk/assert/jest';
 
 test('create the ServerlessAPI', () => {
   const app = new cdk.App();
@@ -31,7 +30,8 @@ test('create the ServerlessAPI', () => {
   // the value should be exactly the same with the output value of `TopicName`
   new cdk.CfnOutput(stackUS, 'RemoteTopicName', { value: remoteOutputValue });
 
-  expect(stackUS).toHaveResource('AWS::CloudFormation::CustomResource', {
+  const t = cdk.assertions.Template.fromStack(stackUS);
+  t.hasResourceProperties('AWS::CloudFormation::CustomResource', {
     ServiceToken: {
       'Fn::GetAtt': [
         'OutputsMyProviderframeworkonEvent64931F85',

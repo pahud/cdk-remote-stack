@@ -1,10 +1,6 @@
 {
   "dependencies": [
     {
-      "name": "@aws-cdk/assert",
-      "type": "build"
-    },
-    {
       "name": "@types/jest",
       "type": "build"
     },
