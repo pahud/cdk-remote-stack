@@ -1,10 +1,11 @@
-import '@aws-cdk/assert/jest';
-import { SynthUtils } from '@aws-cdk/assert';
+import { Template } from 'aws-cdk-lib/assertions';
 import { IntegTesting } from '../src/integ.default';
 
-test('integ snapshot validation', () => {
+test('default validation', () => {
   const integ = new IntegTesting();
   integ.stack.forEach(stack => {
-    expect(SynthUtils.toCloudFormation(stack)).toMatchSnapshot();
+    const t = Template.fromStack(stack);
+    // should match snapshot
+    expect(t).toMatchSnapshot();
   });
 });

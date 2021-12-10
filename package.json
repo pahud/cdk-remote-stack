@@ -19,6 +19,7 @@
     "post-compile": "npx projen post-compile",
     "pre-compile": "npx projen pre-compile",
     "release": "npx projen release",
+    "release:cdkv1": "npx projen release:cdkv1",
     "test": "npx projen test",
     "test:update": "npx projen test:update",
     "test:watch": "npx projen test:watch",
@@ -34,7 +35,6 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-cdk/assert": "^2.1.0",
     "@types/jest": "^26.0.24",
     "@types/node": "^14.17.0",
     "@typescript-eslint/eslint-plugin": "^5",
@@ -53,7 +53,7 @@
     "jsii-pacmak": "^1.47.0",
     "json-schema": "^0.4.0",
     "npm-check-updates": "^11",
-    "projen": "^0.40.0",
+    "projen": "^0.40.1",
     "standard-version": "^9",
     "ts-jest": "^26.5.6",
     "typescript": "^4.5.3"
