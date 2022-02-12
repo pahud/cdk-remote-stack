@@ -13,10 +13,15 @@
     "compile": "npx projen compile",
     "default": "npx projen default",
     "docgen": "npx projen docgen",
+    "eject": "npx projen eject",
     "eslint": "npx projen eslint",
     "gitpod:prebuild": "npx projen gitpod:prebuild",
     "package": "npx projen package",
+    "package-all": "npx projen package-all",
+    "package:js": "npx projen package:js",
+    "package:python": "npx projen package:python",
     "post-compile": "npx projen post-compile",
+    "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
     "release": "npx projen release",
     "release:cdkv1": "npx projen release:cdkv1",
@@ -36,7 +41,7 @@
   },
   "devDependencies": {
     "@types/jest": "^26.0.24",
-    "@types/node": "^14.17.0",
+    "@types/node": "^12",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
     "aws-cdk-lib": "2.0.0",
@@ -44,25 +49,23 @@
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.6",
     "eslint-import-resolver-typescript": "^2.5.0",
-    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-import": "^2.25.4",
     "jest": "^26.6.3",
     "jest-junit": "^13",
-    "jsii": "^1.47.0",
-    "jsii-diff": "^1.47.0",
+    "jsii": "^1.53.0",
+    "jsii-diff": "^1.53.0",
     "jsii-docgen": "^1.8.110",
-    "jsii-pacmak": "^1.47.0",
     "json-schema": "^0.4.0",
-    "npm-check-updates": "^11",
-    "projen": "^0.40.4",
+    "npm-check-updates": "^12",
+    "projen": "^0.52.26",
     "standard-version": "^9",
     "ts-jest": "^26.5.6",
-    "typescript": "^4.5.3"
+    "typescript": "^4.5.5"
   },
   "peerDependencies": {
     "aws-cdk-lib": "^2.0.0",
     "constructs": "^10.0.5"
   },
-  "bundledDependencies": [],
   "keywords": [
     "aws",
     "cdk",
@@ -76,8 +79,8 @@
   "version": "0.0.0",
   "jest": {
     "testMatch": [
-      "**/__tests__/**/*.ts?(x)",
-      "**/?(*.)+(spec|test).ts?(x)"
+      "<rootDir>/src/**/__tests__/**/*.ts?(x)",
+      "<rootDir>/(test|src)/**/?(*.)+(spec|test).ts?(x)"
     ],
     "clearMocks": true,
     "collectCoverage": true,
@@ -85,6 +88,7 @@
       "json",
       "lcov",
       "clover",
+      "cobertura",
       "text"
     ],
     "coverageDirectory": "coverage",
