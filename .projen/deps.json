@@ -6,7 +6,7 @@
     },
     {
       "name": "@types/node",
-      "version": "^14.17.0",
+      "version": "^14",
       "type": "build"
     },
     {
@@ -77,7 +77,7 @@
     },
     {
       "name": "npm-check-updates",
-      "version": "^11",
+      "version": "^12",
       "type": "build"
     },
     {
