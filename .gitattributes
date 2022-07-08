@@ -9,7 +9,6 @@
 /.github/workflows/pull-request-lint.yml linguist-generated
 /.github/workflows/release-cdkv1.yml linguist-generated
 /.github/workflows/release.yml linguist-generated
-/.github/workflows/stale.yml linguist-generated
 /.github/workflows/upgrade-cdkv1.yml linguist-generated
 /.github/workflows/upgrade-main.yml linguist-generated
 /.gitignore linguist-generated
