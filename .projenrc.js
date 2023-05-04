@@ -46,17 +46,10 @@ const project = new awscdk.AwsCdkConstructLibrary({
     announce: false,
   },
   cdkVersion: '2.0.0',
-  workflowNodeVersion: '14.17.0',
   python: {
     distName: 'cdk-remote-stack',
     module: 'cdk_remote_stack',
   },
-});
-
-project.package.addField('resolutions', {
-  'pac-resolver': '^5.0.0',
-  'set-value': '^4.0.1',
-  'ansi-regex': '^5.0.1',
 });
 
 const gitpodPrebuild = project.addTask('gitpod:prebuild', {
