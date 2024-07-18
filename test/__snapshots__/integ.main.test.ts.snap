@@ -162,7 +162,7 @@ Object {
           ],
         },
         "Runtime": "python3.8",
-        "Timeout": 900,
+        "Timeout": 180,
       },
       "Type": "AWS::Lambda::Function",
     },
