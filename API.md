@@ -38,6 +38,7 @@ new RemoteOutputs(scope: Construct, id: string, props: RemoteOutputsProps)
 * **props** (<code>[RemoteOutputsProps](#cdk-remote-stack-remoteoutputsprops)</code>)  *No description*
   * **stack** (<code>[Stack](#aws-cdk-lib-stack)</code>)  The remote CDK stack to get the outputs from. 
   * **alwaysUpdate** (<code>boolean</code>)  Indicate whether always update the custom resource to get the new stack output. __*Default*__: true
+  * **timeout** (<code>[Duration](#aws-cdk-lib-duration)</code>)  timeout for custom resource handler. __*Default*__: no timeout specified.
 
 
 
@@ -89,6 +90,7 @@ new RemoteParameters(scope: Construct, id: string, props: RemoteParametersProps)
   * **region** (<code>string</code>)  The region code of the remote stack. 
   * **alwaysUpdate** (<code>boolean</code>)  Indicate whether always update the custom resource to get the new stack output. __*Default*__: true
   * **role** (<code>[aws_iam.IRole](#aws-cdk-lib-aws-iam-irole)</code>)  The assumed role used to get remote parameters. __*Optional*__
+  * **timeout** (<code>[Duration](#aws-cdk-lib-duration)</code>)  timeout for custom resource handler. __*Default*__: no timeout specified.
 
 
 
@@ -128,6 +130,7 @@ Name | Type | Description
 -----|------|-------------
 **stack** | <code>[Stack](#aws-cdk-lib-stack)</code> | The remote CDK stack to get the outputs from.
 **alwaysUpdate**? | <code>boolean</code> | Indicate whether always update the custom resource to get the new stack output.<br/>__*Default*__: true
+**timeout**? | <code>[Duration](#aws-cdk-lib-duration)</code> | timeout for custom resource handler.<br/>__*Default*__: no timeout specified.
 
 
 
@@ -144,6 +147,7 @@ Name | Type | Description
 **region** | <code>string</code> | The region code of the remote stack.
 **alwaysUpdate**? | <code>boolean</code> | Indicate whether always update the custom resource to get the new stack output.<br/>__*Default*__: true
 **role**? | <code>[aws_iam.IRole](#aws-cdk-lib-aws-iam-irole)</code> | The assumed role used to get remote parameters.<br/>__*Optional*__
+**timeout**? | <code>[Duration](#aws-cdk-lib-duration)</code> | timeout for custom resource handler.<br/>__*Default*__: no timeout specified.
 
 
 
