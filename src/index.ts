@@ -39,7 +39,7 @@ export class RemoteOutputs extends Construct {
       runtime: lambda.Runtime.PYTHON_3_8,
       code: lambda.Code.fromAsset(path.join(__dirname, '../custom-resource-handler')),
       handler: 'remote-outputs.on_event',
-      timeout: Duration.minutes(15),
+      timeout: Duration.minutes(3),
     });
 
     const myProvider = new cr.Provider(this, 'MyProvider', {
