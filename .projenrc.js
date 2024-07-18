@@ -45,7 +45,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     twitter: 'pahudnet',
     announce: false,
   },
-  cdkVersion: '2.0.0',
+  cdkVersion: '2.85.0',
   python: {
     distName: 'cdk-remote-stack',
     module: 'cdk_remote_stack',

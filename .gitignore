@@ -31,7 +31,6 @@ jspm_packages/
 *.tgz
 .yarn-integrity
 .cache
-!/.projenrc.js
 /test-reports/
 junit.xml
 /coverage/
@@ -44,7 +43,6 @@ junit.xml
 !/.github/workflows/upgrade-main.yml
 !/.github/workflows/upgrade-cdkv1.yml
 !/.github/pull_request_template.md
-!/.npmrc
 !/test/
 !/tsconfig.dev.json
 !/src/
@@ -58,3 +56,4 @@ tsconfig.json
 cdk.out
 cdk.context.json
 yarn-error.log
+!/.projenrc.js

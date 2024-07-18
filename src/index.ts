@@ -1,6 +1,6 @@
 import * as path from 'path';
 import {
-  Stack, CustomResource,
+  Stack, CustomResource, Duration,
   aws_iam as iam,
   aws_lambda as lambda,
   aws_logs as logs,
@@ -21,6 +21,11 @@ export interface RemoteOutputsProps {
    * @default true
    */
   readonly alwaysUpdate?: boolean;
+  /**
+   * timeout for custom resource handler
+   * @default - no timeout specified.
+   */
+  readonly timeout?: Duration;
 }
 
 /**
@@ -36,9 +41,10 @@ export class RemoteOutputs extends Construct {
     super(scope, id);
 
     const onEvent = new lambda.Function(this, 'MyHandler', {
-      runtime: lambda.Runtime.PYTHON_3_8,
+      runtime: lambda.Runtime.PYTHON_3_9,
       code: lambda.Code.fromAsset(path.join(__dirname, '../custom-resource-handler')),
       handler: 'remote-outputs.on_event',
+      timeout: props.timeout,
     });
 
     const myProvider = new cr.Provider(this, 'MyProvider', {
@@ -96,6 +102,11 @@ export interface RemoteParametersProps {
    * @default true
    */
   readonly alwaysUpdate?: boolean;
+  /**
+   * timeout for custom resource handler
+   * @default - no timeout specified.
+   */
+  readonly timeout?: Duration;
 }
 
 /**
@@ -111,9 +122,10 @@ export class RemoteParameters extends Construct {
     super(scope, id);
 
     const onEvent = new lambda.Function(this, 'MyHandler', {
-      runtime: lambda.Runtime.PYTHON_3_8,
+      runtime: lambda.Runtime.PYTHON_3_9,
       code: lambda.Code.fromAsset(path.join(__dirname, '../custom-resource-handler')),
       handler: 'remote-parameters.on_event',
+      timeout: props.timeout,
     });
 
     const myProvider = new cr.Provider(this, 'MyProvider', {
