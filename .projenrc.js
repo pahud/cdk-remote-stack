@@ -26,9 +26,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
   /**
     * we also release the cdkv1 branch with major version 1.
     */
-  releaseBranches: {
-    cdkv1: { npmDistTag: 'cdkv1', majorVersion: 1 },
-  },
+  // releaseBranches: {
+  //   cdkv1: { npmDistTag: 'cdkv1', majorVersion: 1 },
+  // },
   depsUpgradeOptions: {
     ignoreProjen: false,
     workflowOptions: {
@@ -45,7 +45,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     twitter: 'pahudnet',
     announce: false,
   },
-  cdkVersion: '2.0.0',
+  cdkVersion: '2.85.0',
   python: {
     distName: 'cdk-remote-stack',
     module: 'cdk_remote_stack',
