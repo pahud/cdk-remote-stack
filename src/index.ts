@@ -41,7 +41,7 @@ export class RemoteOutputs extends Construct {
     super(scope, id);
 
     const onEvent = new lambda.Function(this, 'MyHandler', {
-      runtime: lambda.Runtime.PYTHON_3_9,
+      runtime: lambda.Runtime.PYTHON_3_13,
       code: lambda.Code.fromAsset(path.join(__dirname, '../custom-resource-handler')),
       handler: 'remote-outputs.on_event',
       timeout: props.timeout,
@@ -122,7 +122,7 @@ export class RemoteParameters extends Construct {
     super(scope, id);
 
     const onEvent = new lambda.Function(this, 'MyHandler', {
-      runtime: lambda.Runtime.PYTHON_3_9,
+      runtime: lambda.Runtime.PYTHON_3_13,
       code: lambda.Code.fromAsset(path.join(__dirname, '../custom-resource-handler')),
       handler: 'remote-parameters.on_event',
       timeout: props.timeout,
