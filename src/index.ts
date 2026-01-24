@@ -134,7 +134,10 @@ export class RemoteParameters extends Construct {
     });
 
     onEvent.addToRolePolicy(new iam.PolicyStatement({
-      actions: ['ssm:GetParametersByPath'],
+      actions: [
+        'ssm:GetParameter',
+        'ssm:GetParametersByPath',
+      ],
       resources: ['*'],
     }));
 

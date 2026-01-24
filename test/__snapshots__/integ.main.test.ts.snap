@@ -152,7 +152,7 @@ Object {
           "S3Bucket": Object {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-us-west-2",
           },
-          "S3Key": "3803df2f6849acf50bb6577ee095a669940670e799f70a2be34893a399777bc3.zip",
+          "S3Key": "4b6f72776eeaebb01b3d2d7f24abdc1eecb6b1de9471dd677a13066705d50575.zip",
         },
         "Handler": "remote-outputs.on_event",
         "Role": Object {

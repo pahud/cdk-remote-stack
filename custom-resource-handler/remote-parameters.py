@@ -3,6 +3,8 @@
 
 import boto3
 from boto3.session import Session
+from botocore.exceptions import ClientError
+import traceback
 
 def get_ssm_client(region_name, role_arn=None, session_name=None):
     if role_arn:
@@ -18,19 +20,40 @@ def get_ssm_client(region_name, role_arn=None, session_name=None):
 
 def get_parameters(region_name, path, role_arn=None, session_name=None):
     client = get_ssm_client(region_name, role_arn, session_name)
-    paginator = client.get_paginator('get_parameters_by_path')
-    response_iterator = paginator.paginate(
-        Path=path,
-        Recursive=True,
-        WithDecryption=True,
-        PaginationConfig={
-            'MaxItems': 100,
-            'PageSize': 10,
-        }
-    )
     result = []
-    for x in response_iterator:
-        result += x["Parameters"]
+
+    try:
+        response = client.get_parameter(
+            Name=path,
+            WithDecryption=True,
+        )
+        if response["Parameter"]:
+            result += [response["Parameter"]]
+    except ClientError as e:
+        if e.response['Error']['Code'] == 'ValidationException':
+            traceback.print_exc()
+        else:
+            raise
+
+    try:
+        paginator = client.get_paginator('get_parameters_by_path')
+        response_iterator = paginator.paginate(
+            Path=path,
+            Recursive=True,
+            WithDecryption=True,
+            PaginationConfig={
+                'MaxItems': 100,
+                'PageSize': 10,
+            }
+        )
+        for x in response_iterator:
+            result += x["Parameters"]
+    except ClientError as e:
+        # Continue when ValidationException due to parameters without slashes
+        if e.response['Error']['Code'] == 'ValidationException':
+            traceback.print_exc()
+        else:
+            raise
     output = {}
     for x in result:
         output[x["Name"]] = x["Value"]
